@@ -3,6 +3,7 @@ import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/mask.dart';
 import 'package:mvp_timer/helpers/responsiveness.dart';
+import 'package:mvp_timer/pages/overview/hero_action_button.dart';
 import 'package:mvp_timer/widgets/element_text.dart';
 
 class MvPHeroInfo extends StatelessWidget {
@@ -48,7 +49,8 @@ class MvPHeroInfo extends StatelessWidget {
                       letterSpacing: 1.3)),
             ])),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,11 +62,13 @@ class MvPHeroInfo extends StatelessWidget {
                 mvp.size.widget,
               ],
             ),
+            Expanded(child: Container()),
             Image.network(
               mvp.gifUrl,
               height: ResponsiveWidget.isLargeScreen(context) ? 90 : 150,
               width: ResponsiveWidget.isLargeScreen(context) ? 90 : 150,
             ),
+            Expanded(child: Container()),
           ],
         ),
       ],

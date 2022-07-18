@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mvp_timer/constants/style.dart';
+import 'package:mvp_timer/controllers/drawer_menu_controller.dart';
 import 'package:mvp_timer/controllers/navigation_controller.dart';
 import 'package:mvp_timer/controllers/search_controller.dart';
 import 'package:mvp_timer/layout.dart';
@@ -11,6 +12,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(SearchController());
   Get.put(NavigationController());
+  Get.put(DrawerMenuController());
   runApp(const MvPTimer());
 }
 

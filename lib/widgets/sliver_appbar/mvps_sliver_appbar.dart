@@ -23,11 +23,18 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
       automaticallyImplyLeading: false,
       toolbarHeight: 70,
       expandedHeight: 180,
-      leading: IconButton(
-          onPressed: () {
-            navigationController.scaffoldKey.currentState!.openDrawer();
-          },
-          icon: Icon(Icons.menu, color: light)),
+      leading: Row(
+        children: [
+          SizedBox(width: 5),
+          IconButton(
+              iconSize: 35,
+              splashRadius: 25,
+              onPressed: () {
+                navigationController.scaffoldKey.currentState!.openDrawer();
+              },
+              icon: Icon(Icons.menu_open, color: light)),
+        ],
+      ),
       flexibleSpace: const FlexibleSpaceBar(
         background: Padding(
           padding: EdgeInsets.only(bottom: 16),
@@ -37,14 +44,13 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text('MvPlus+',
-              style: TextStyle(color: light, fontSize: 26, letterSpacing: 1.3)),
+          Text('MvPlus+', style: TextStyle(color: light, fontSize: 26)),
           SizedBox(
             width: 500,
             height: 50,
             child: TextField(
               cursorColor: light,
-              style: TextStyle(fontSize: 18, color: light, letterSpacing: 1.3),
+              style: TextStyle(fontSize: 18, color: light),
               controller: searchController.searchTextController,
               onChanged: (text) {
                 searchController.applyFilter(

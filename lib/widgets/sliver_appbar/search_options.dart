@@ -24,9 +24,7 @@ class _SearchOptionsState extends State<SearchOptions> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Elemento',
-                  style: TextStyle(
-                      color: light, fontSize: 14, letterSpacing: 1.3)),
+              Text('Elemento', style: TextStyle(color: light, fontSize: 14)),
               DropdownButton(
                   underline: Container(),
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -47,9 +45,7 @@ class _SearchOptionsState extends State<SearchOptions> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Raça',
-                  style: TextStyle(
-                      color: light, fontSize: 14, letterSpacing: 1.3)),
+              Text('Raça', style: TextStyle(color: light, fontSize: 14)),
               DropdownButton(
                   underline: Container(),
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -70,9 +66,7 @@ class _SearchOptionsState extends State<SearchOptions> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Tamanho',
-                  style: TextStyle(
-                      color: light, fontSize: 14, letterSpacing: 1.3)),
+              Text('Tamanho', style: TextStyle(color: light, fontSize: 14)),
               DropdownButton(
                   underline: Container(),
                   borderRadius: const BorderRadius.all(Radius.circular(10)),

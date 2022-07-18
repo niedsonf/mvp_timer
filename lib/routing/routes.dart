@@ -9,6 +9,9 @@ const FavoritePageRoute = '/fav';
 const TimerPageDisplayName = "Timer";
 const TimerPageRoute = '/timer';
 
+const HelpPageDisplayName = "Ajuda";
+const HelpPageRoute = '/help';
+
 class PageItem {
   final String name;
   final String route;
@@ -18,6 +21,7 @@ class PageItem {
 
 List<PageItem> pageItems = [
   PageItem(OverviewPageDisplayName, OverviewPageRoute),
+  PageItem(TimerPageDisplayName, TimerPageRoute),
   PageItem(FavoritePageDisplayName, FavoritePageRoute),
-  PageItem(TimerPageDisplayName, TimerPageRoute)
+  PageItem(HelpPageDisplayName, HelpPageRoute)
 ];

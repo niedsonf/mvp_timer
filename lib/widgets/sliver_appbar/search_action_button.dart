@@ -12,6 +12,9 @@ class SearchActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      customBorder: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -21,7 +24,7 @@ class SearchActionButton extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: color),
         child: Text(text,
-            style: TextStyle(color: light, fontSize: 14, letterSpacing: 1.3),
+            style: TextStyle(color: light, fontSize: 14),
             textAlign: TextAlign.center),
       ),
     );
