@@ -15,6 +15,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  setPathUrlStrategy();
   Get.put(SearchController());
   Get.put(NavigationController());
   Get.put(DrawerMenuController());
