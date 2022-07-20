@@ -206,6 +206,7 @@ class SpawnMap {
 }
 
 class MvP {
+  final int id;
   final String name;
   final int level;
   final Race race;
@@ -218,7 +219,8 @@ class MvP {
   final List<SpawnMap> spawnMaps;
 
   MvP(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.level,
       required this.race,
       required this.size,
@@ -232,6 +234,7 @@ class MvP {
 
 List<MvP> owMvPs = [
   MvP(
+      id: 3505,
       name: 'Gemaring',
       level: 25,
       race: Races.plant,
@@ -255,6 +258,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Ninho do Dragão', mapId: 'lasa_dun01', respawn: 1)
       ]),
   MvP(
+      id: 1087,
       name: 'Orc Herói',
       level: 50,
       race: Races.human,
@@ -279,6 +283,7 @@ List<MvP> owMvPs = [
             name: 'Arredores de Geffen (3)', mapId: 'gef_fild03', respawn: 1)
       ]),
   MvP(
+      id: 1147,
       name: 'Maya',
       level: 55,
       race: Races.insect,
@@ -309,6 +314,7 @@ List<MvP> owMvPs = [
             name: 'Calabouço de Luina (1)', mapId: 'gld_dun02_2', respawn: 8),
       ]),
   MvP(
+      id: 1190,
       name: 'Senhor dos Orcs',
       level: 55,
       race: Races.human,
@@ -333,6 +339,7 @@ List<MvP> owMvPs = [
             name: 'Arredores de Geffen (10)', mapId: 'gef_fild10', respawn: 2)
       ]),
   MvP(
+      id: 1086,
       name: 'Besouro-Ladrão Dourado',
       level: 65,
       race: Races.insect,
@@ -357,6 +364,7 @@ List<MvP> owMvPs = [
             name: 'Esgotos de Prontera (4)', mapId: 'prt_sewb4', respawn: 1)
       ]),
   MvP(
+      id: 1115,
       name: 'Eddga',
       level: 65,
       race: Races.brute,
@@ -389,6 +397,7 @@ List<MvP> owMvPs = [
             respawn: 8),
       ]),
   MvP(
+      id: 1038,
       name: 'Osíris',
       level: 68,
       race: Races.undead,
@@ -412,6 +421,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Pirâmide (4)', mapId: 'moc_pryd04', respawn: 1)
       ]),
   MvP(
+      id: 1511,
       name: 'Amon Ra',
       level: 69,
       race: Races.human,
@@ -436,6 +446,7 @@ List<MvP> owMvPs = [
             name: 'Subsolo da Pirâmide (2)', mapId: 'moc_pryd06', respawn: 1)
       ]),
   MvP(
+      id: 1159,
       name: 'Freeoni',
       level: 71,
       race: Races.brute,
@@ -460,6 +471,7 @@ List<MvP> owMvPs = [
             name: 'Deserto de Sograt (17)', mapId: 'moc_fild17', respawn: 2)
       ]),
   MvP(
+      id: 1389,
       name: 'Drácula',
       level: 75,
       race: Races.demon,
@@ -484,6 +496,7 @@ List<MvP> owMvPs = [
             name: 'Calabouço de Geffen (1)', mapId: 'gef_dun01', respawn: 1)
       ]),
   MvP(
+      id: 1046,
       name: 'Doppelganger',
       level: 77,
       race: Races.demon,
@@ -512,6 +525,7 @@ List<MvP> owMvPs = [
             name: 'Calabouço de Britoniah (1)', mapId: 'gld_dun04', respawn: 8),
       ]),
   MvP(
+      id: 1059,
       name: 'Abelha-Rainha',
       level: 78,
       race: Races.insect,
@@ -536,6 +550,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Calabouço de Luina (1)', mapId: 'gld_dun02', respawn: 8)
       ]),
   MvP(
+      id: 1150,
       name: 'Flor do Luar',
       level: 79,
       race: Races.demon,
@@ -563,6 +578,7 @@ List<MvP> owMvPs = [
             respawn: 8)
       ]),
   MvP(
+      id: 1688,
       name: 'Lady Tanee',
       level: 80,
       race: Races.plant,
@@ -586,6 +602,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Santuário Ancestral', mapId: 'ayo_dun02', respawn: 7)
       ]),
   MvP(
+      id: 1039,
       name: 'Bafomé',
       level: 81,
       race: Races.demon,
@@ -614,6 +631,7 @@ List<MvP> owMvPs = [
             respawn: 8),
       ]),
   MvP(
+      id: 1157,
       name: 'Faraó',
       level: 85,
       race: Races.human,
@@ -637,6 +655,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Esfinge (5)', mapId: 'in_sphinx5', respawn: 1),
       ]),
   MvP(
+      id: 1112,
       name: 'Drake',
       level: 91,
       race: Races.undead,
@@ -660,6 +679,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Navio Fantasma (2)', mapId: 'treasure02', respawn: 2),
       ]),
   MvP(
+      id: 1251,
       name: 'Cavaleiro da Tempestade',
       level: 92,
       race: Races.formless,
@@ -686,6 +706,7 @@ List<MvP> owMvPs = [
             respawn: 1.117),
       ]),
   MvP(
+      id: 2068,
       name: 'Boitatá',
       level: 93,
       race: Races.brute,
@@ -712,6 +733,7 @@ List<MvP> owMvPs = [
             respawn: 1.117),
       ]),
   MvP(
+      id: 2156,
       name: 'Leak',
       level: 94,
       race: Races.demon,
@@ -735,6 +757,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Vulcão Krakatau', mapId: 'dew_dun01', respawn: 2),
       ]),
   MvP(
+      id: 1373,
       name: 'Senhor dos Mortos',
       level: 94,
       race: Races.demon,
@@ -758,6 +781,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Nifflheim', mapId: 'niflheim', respawn: 2.217),
       ]),
   MvP(
+      id: 1272,
       name: 'Senhor das Trevas',
       level: 96,
       race: Races.demon,
@@ -790,6 +814,7 @@ List<MvP> owMvPs = [
             respawn: 8),
       ]),
   MvP(
+      id: 1885,
       name: 'Gorynych',
       level: 97,
       race: Races.brute,
@@ -814,6 +839,7 @@ List<MvP> owMvPs = [
             name: 'Floresta Encantada (3)', mapId: 'mosk_dun03', respawn: 2),
       ]),
   MvP(
+      id: 1630,
       name: 'Lady Branca',
       level: 97,
       race: Races.human,
@@ -837,6 +863,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Suei Long Gon', mapId: 'lou_dun03', respawn: 1.933),
       ]),
   MvP(
+      id: 1252,
       name: 'Hatii',
       level: 98,
       race: Races.brute,
@@ -860,6 +887,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Arredores de Lutie', mapId: 'xmas_fild01', respawn: 2),
       ]),
   MvP(
+      id: 1779,
       name: 'Ktullanux',
       level: 98,
       race: Races.brute,
@@ -883,6 +911,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Caverna de Gelo (3)', mapId: 'ice_dun03', respawn: 2),
       ]),
   MvP(
+      id: 1708,
       name: 'Memória de Thanatos',
       level: 99,
       race: Races.demon,
@@ -907,6 +936,7 @@ List<MvP> owMvPs = [
             name: 'Topo da Torre de Thanatos', mapId: 'thana_boss', respawn: 2),
       ]),
   MvP(
+      id: 2442,
       name: 'Superaprendiz',
       level: 99,
       race: Races.human,
@@ -931,6 +961,7 @@ List<MvP> owMvPs = [
             name: 'Calabouço de Luina (1)', mapId: 'teg_dun02', respawn: 3),
       ]),
   MvP(
+      id: 2441,
       name: 'Aprendiz',
       level: 99,
       race: Races.human,
@@ -957,6 +988,7 @@ List<MvP> owMvPs = [
             respawn: 3),
       ]),
   MvP(
+      id: 1623,
       name: 'RSX-0806',
       level: 100,
       race: Races.formless,
@@ -981,6 +1013,7 @@ List<MvP> owMvPs = [
             name: 'Calabouço da Mina (2)', mapId: 'ein_dun02', respawn: 2.0833),
       ]),
   MvP(
+      id: 1492,
       name: 'Samurai Encarnado',
       level: 100,
       race: Races.human,
@@ -1005,6 +1038,7 @@ List<MvP> owMvPs = [
             name: 'Templo Subterrâneo', mapId: 'ama_dun03', respawn: 1.516),
       ]),
   MvP(
+      id: 1418,
       name: 'Serpente Suprema',
       level: 105,
       race: Races.brute,
@@ -1028,6 +1062,7 @@ List<MvP> owMvPs = [
         SpawnMap(name: 'Terra das Fadas', mapId: 'gon_dun03', respawn: 1.566),
       ]),
   MvP(
+      id: 1583,
       name: 'Tao Gunka',
       level: 110,
       race: Races.demon,
@@ -1052,6 +1087,7 @@ List<MvP> owMvPs = [
             name: 'Karu, a Caverna do Oeste', mapId: 'beach_dun', respawn: 5),
       ]),
   MvP(
+      id: 1312,
       name: 'General Tartaruga',
       level: 110,
       race: Races.brute,

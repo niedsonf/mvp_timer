@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 import 'package:mvp_timer/constants/mvp_database.dart' as DB;
-import 'package:mvp_timer/pages/overview/mvp_hero.dart';
+
 import 'package:flutter/material.dart';
+import 'package:mvp_timer/widgets/mvp_hero/mvp_hero.dart';
 
 class SearchController extends GetxController {
   static SearchController instance = Get.find();

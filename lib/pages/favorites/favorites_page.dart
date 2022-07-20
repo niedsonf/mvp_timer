@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_timer/widgets/custom_text.dart';
+import 'package:mvp_timer/helpers/constants.dart';
+
+import 'package:mvp_timer/widgets/mvp_grid.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/mvps_sliver_appbar.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -9,12 +11,10 @@ class FavoritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        MvPsSliverAppbar(),
-        SliverToBoxAdapter(
-          child: Center(
-            child: CustomText(text: 'Favorites Page', size: 30),
-          ),
-        )
+        MvPsSliverAppbar(contentController: favoritesController),
+        SliverPadding(
+            padding: const EdgeInsets.all(15),
+            sliver: MvPGrid(contentController: favoritesController))
       ],
     );
   }

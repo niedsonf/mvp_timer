@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_timer/pages/overview/mvp_grid.dart';
+import 'package:mvp_timer/helpers/constants.dart';
+import 'package:mvp_timer/widgets/mvp_grid.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/mvps_sliver_appbar.dart';
 
 class OverviewPage extends StatelessWidget {
@@ -9,8 +10,12 @@ class OverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        MvPsSliverAppbar(),
-        SliverPadding(padding: EdgeInsets.all(15), sliver: MvPGrid())
+        MvPsSliverAppbar(
+          contentController: searchController,
+        ),
+        SliverPadding(
+            padding: const EdgeInsets.all(15),
+            sliver: MvPGrid(contentController: searchController))
       ],
     );
   }

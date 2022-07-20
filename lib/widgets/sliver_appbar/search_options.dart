@@ -6,7 +6,8 @@ import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/search_action_button.dart';
 
 class SearchOptions extends StatefulWidget {
-  const SearchOptions({Key? key}) : super(key: key);
+  var contentController;
+  SearchOptions({Key? key, required this.contentController}) : super(key: key);
 
   @override
   State<SearchOptions> createState() => _SearchOptionsState();
@@ -30,13 +31,13 @@ class _SearchOptionsState extends State<SearchOptions> {
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   dropdownColor: lightDark,
                   icon: Icon(Icons.arrow_downward, color: light),
-                  value: searchController.selectedElement.value,
+                  value: widget.contentController.selectedElement.value,
                   items: DB.elementList
                       .map((e) => DropdownMenuItem(value: e, child: e.widget))
                       .toList(),
-                  onChanged: (DB.Element? value) {
+                  onChanged: (value) {
                     setState(() {
-                      searchController.applyFilter(element: value);
+                      widget.contentController.applyFilter(element: value);
                     });
                   }),
             ],
@@ -51,13 +52,13 @@ class _SearchOptionsState extends State<SearchOptions> {
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   dropdownColor: lightDark,
                   icon: Icon(Icons.arrow_downward, color: light),
-                  value: searchController.selectedRace.value,
+                  value: widget.contentController.selectedRace.value,
                   items: DB.raceList
                       .map((e) => DropdownMenuItem(value: e, child: e.widget))
                       .toList(),
-                  onChanged: (DB.Race? value) {
+                  onChanged: (value) {
                     setState(() {
-                      searchController.applyFilter(race: value);
+                      widget.contentController.applyFilter(race: value);
                     });
                   }),
             ],
@@ -72,13 +73,13 @@ class _SearchOptionsState extends State<SearchOptions> {
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   dropdownColor: lightDark,
                   icon: Icon(Icons.arrow_downward, color: light),
-                  value: searchController.selectedSize.value,
+                  value: widget.contentController.selectedSize.value,
                   items: DB.sizeList
                       .map((e) => DropdownMenuItem(value: e, child: e.widget))
                       .toList(),
-                  onChanged: (DB.MvPSize? value) {
+                  onChanged: (value) {
                     setState(() {
-                      searchController.applyFilter(size: value);
+                      widget.contentController.applyFilter(size: value);
                     });
                   }),
             ],
@@ -89,8 +90,8 @@ class _SearchOptionsState extends State<SearchOptions> {
                 text: 'RESETAR FILTROS',
                 color: Colors.transparent,
                 onTap: () {
-                  searchController.searchTextController.text = '';
-                  searchController.applyFilter(
+                  widget.contentController.searchTextController.text = '';
+                  widget.contentController.applyFilter(
                     text: '',
                     race: DB.Races.all,
                     element: DB.Elements.all,

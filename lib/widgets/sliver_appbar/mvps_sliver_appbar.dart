@@ -5,7 +5,9 @@ import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/search_options.dart';
 
 class MvPsSliverAppbar extends StatefulWidget {
-  MvPsSliverAppbar({Key? key}) : super(key: key);
+  var contentController;
+  MvPsSliverAppbar({Key? key, required this.contentController})
+      : super(key: key);
 
   @override
   State<MvPsSliverAppbar> createState() => _MvPsSliverAppbarState();
@@ -22,7 +24,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
       backgroundColor: lightDark,
       automaticallyImplyLeading: false,
       toolbarHeight: 70,
-      expandedHeight: 180,
+      expandedHeight: 160,
       leading: Row(
         children: [
           SizedBox(width: 5),
@@ -35,10 +37,10 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
               icon: Icon(Icons.menu_open, color: light)),
         ],
       ),
-      flexibleSpace: const FlexibleSpaceBar(
+      flexibleSpace: FlexibleSpaceBar(
         background: Padding(
-          padding: EdgeInsets.only(bottom: 16),
-          child: SearchOptions(),
+          padding: const EdgeInsets.only(bottom: 16),
+          child: SearchOptions(contentController: widget.contentController),
         ),
       ),
       title: Row(
@@ -51,10 +53,10 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
             child: TextField(
               cursorColor: light,
               style: TextStyle(fontSize: 18, color: light),
-              controller: searchController.searchTextController,
+              controller: widget.contentController.searchTextController,
               onChanged: (text) {
-                searchController.applyFilter(
-                    text: searchController.searchTextController.text
+                widget.contentController.applyFilter(
+                    text: widget.contentController.searchTextController.text
                         .toLowerCase());
               },
               decoration: InputDecoration(
