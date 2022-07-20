@@ -17,7 +17,7 @@ class _MvPGridState extends State<MvPGrid> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (searchController.theShowcase.value.isEmpty) {
+      if (widget.contentController.theShowcase.value.isEmpty) {
         return const SliverToBoxAdapter(
           child: Center(
             child: CustomText(

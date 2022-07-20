@@ -44,7 +44,7 @@ class FavoritesController extends GetxController {
   void startPrefs() async {
     await _prefs.then((instance) => {
           if (instance.getStringList(FAVORITES) == null)
-            {instance.setStringList(FAVORITES, []), favoritesList.value = []}
+            {instance.setStringList(FAVORITES, [])}
         });
   }
 
