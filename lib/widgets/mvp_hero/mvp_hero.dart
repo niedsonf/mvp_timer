@@ -71,7 +71,7 @@ class MvPHero extends StatelessWidget {
                 .contains(mvp.id.toString()),
             child: Positioned(
                 right: 0,
-                bottom: 50,
+                bottom: 60,
                 child: HeroActionButton(
                     color: Colors.black,
                     onTap: () {
@@ -96,7 +96,7 @@ class MvPHero extends StatelessWidget {
                 .contains(mvp.id.toString()),
             child: Positioned(
                 right: 0,
-                bottom: 50,
+                bottom: 60,
                 child: HeroActionButton(
                     color: red,
                     onTap: () {

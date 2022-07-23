@@ -14,9 +14,22 @@ class FavoritesController extends GetxController {
   Rx<DB.Race?> selectedRace = DB.Races.all.obs;
   Rx<DB.Element?> selectedElement = DB.Elements.all.obs;
   Rx<DB.MvPSize?> selectedSize = DB.MvPSizes.all.obs;
+  RxBool owShow = false.obs;
+  RxBool inShow = false.obs;
+  RxBool thShow = false.obs;
   RxList<String> favoritesList = [''].obs;
-  RxList<MvPHero> theShowcase = [
+  RxList<MvPHero> owShowcase = [
     ...DB.owMvPs
+        .where((mvp) => false)
+        .map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+  ].obs;
+  RxList<MvPHero> inShowcase = [
+    ...DB.inMvPs
+        .where((mvp) => false)
+        .map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+  ].obs;
+  RxList<MvPHero> thShowcase = [
+    ...DB.thMvPs
         .where((mvp) => false)
         .map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
   ].obs;
@@ -37,7 +50,9 @@ class FavoritesController extends GetxController {
     await _prefs.then((instance) => {
           instance
               .setStringList(FAVORITES, [...favoritesList.value.map((e) => e)]),
-          getNewShowcase()
+          getNewShowcase(owShowcase, DB.owMvPs),
+          getNewShowcase(inShowcase, DB.inMvPs),
+          getNewShowcase(thShowcase, DB.thMvPs)
         });
   }
 
@@ -51,12 +66,14 @@ class FavoritesController extends GetxController {
           else
             {favoritesList.value = favs!}
         });
-    getNewShowcase();
+    getNewShowcase(owShowcase, DB.owMvPs);
+    getNewShowcase(inShowcase, DB.inMvPs);
+    getNewShowcase(thShowcase, DB.thMvPs);
   }
 
-  getNewShowcase() {
-    theShowcase.value = RxList<MvPHero>([
-      ...DB.owMvPs.where((mvp) {
+  getNewShowcase(RxList<MvPHero> obs, List<DB.MvP> list) {
+    obs.value = RxList<MvPHero>([
+      ...list.where((mvp) {
         List<Function(DB.MvP mvp)> conditions = [];
         conditions.add((mvp) => favoritesList.contains(mvp.id.toString()));
         if (searchText.value != '') {
@@ -83,6 +100,8 @@ class FavoritesController extends GetxController {
     selectedRace.value = race ?? selectedRace.value;
     selectedElement.value = element ?? selectedElement.value;
     selectedSize.value = size ?? selectedSize.value;
-    getNewShowcase();
+    getNewShowcase(owShowcase, DB.owMvPs);
+    getNewShowcase(inShowcase, DB.inMvPs);
+    getNewShowcase(thShowcase, DB.thMvPs);
   }
 }

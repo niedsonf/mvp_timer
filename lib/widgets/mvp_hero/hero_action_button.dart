@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_timer/constants/style.dart';
+import 'package:mvp_timer/helpers/responsiveness.dart';
 
 class HeroActionButton extends StatefulWidget {
   final IconData icon;
@@ -51,7 +52,9 @@ class _HeroActionButtonState extends State<HeroActionButton>
               color: widget.color,
               border: Border.all(color: light)),
           padding: const EdgeInsets.all(8),
-          child: Icon(widget.icon, color: light, size: 24),
+          child: Icon(widget.icon,
+              color: light,
+              size: ResponsiveWidget.isLargeScreen(context) ? 24 : 34),
         ),
       ),
     );

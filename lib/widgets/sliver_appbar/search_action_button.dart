@@ -20,11 +20,11 @@ class SearchActionButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         decoration: BoxDecoration(
             border:
-                color == Colors.transparent ? Border.all(color: light) : null,
+                color == Colors.transparent ? Border.all(color: darker) : null,
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: color),
         child: Text(text,
-            style: TextStyle(color: light, fontSize: 14),
+            style: TextStyle(color: darker, fontSize: 14),
             textAlign: TextAlign.center),
       ),
     );

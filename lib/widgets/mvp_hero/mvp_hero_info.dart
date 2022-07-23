@@ -21,7 +21,7 @@ class MvPHeroInfo extends StatelessWidget {
           children: [
             Text('LV. ${mvp.level.toString()} ',
                 style:
-                    TextStyle(color: light, fontSize: 16, letterSpacing: 1.3)),
+                    TextStyle(color: light, fontSize: 14, letterSpacing: 1.3)),
             Visibility(
                 visible: mvp.greenAura,
                 child: ElementText(
@@ -37,7 +37,7 @@ class MvPHeroInfo extends StatelessWidget {
                   text: '${mvp.name}\n',
                   style: TextStyle(
                       color: light,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.3)),
               TextSpan(
@@ -65,8 +65,8 @@ class MvPHeroInfo extends StatelessWidget {
             Expanded(child: Container()),
             Image.network(
               mvp.gifUrl,
-              height: ResponsiveWidget.isLargeScreen(context) ? 90 : 100,
-              width: ResponsiveWidget.isLargeScreen(context) ? 90 : 100,
+              height: ResponsiveWidget.isLargeScreen(context) ? 80 : 140,
+              width: ResponsiveWidget.isLargeScreen(context) ? 80 : 140,
             ),
             Expanded(child: Container()),
           ],

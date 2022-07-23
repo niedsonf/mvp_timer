@@ -201,8 +201,13 @@ class ElementsDamage {
 class SpawnMap {
   final String name;
   final String mapId;
+  final String mapUrl;
   final double respawn;
-  SpawnMap({required this.name, required this.mapId, required this.respawn});
+  SpawnMap(
+      {required this.name,
+      required this.mapId,
+      required this.mapUrl,
+      required this.respawn});
 }
 
 class MvP {
@@ -232,6 +237,305 @@ class MvP {
       required this.spawnMaps});
 }
 
+SpawnMap thMap = SpawnMap(
+    name: 'Laboratório de Somatologia (Pesadelo)',
+    mapId: 'lhz_dun_n',
+    mapUrl: 'https://www.divine-pride.net/img/map/original/lhz_dun_n',
+    respawn: 120);
+
+enum MvPGroup { TH, OW, IN }
+
+List<MvP> thMvPs = [
+  MvP(
+      id: 3241,
+      name: 'Bioquímico Flamel',
+      level: 186,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.fire,
+      hp: 14400000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3241.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 200,
+          earth: 60,
+          fire: -50,
+          wind: 100,
+          poison: 75,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3245,
+      name: 'Trovador Alphoccio',
+      level: 186,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.wind,
+      hp: 10800000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3245.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 60,
+          earth: 200,
+          fire: 100,
+          wind: -50,
+          poison: 75,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3246,
+      name: 'Musa Trentini',
+      level: 186,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.wind,
+      hp: 10800000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3246.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 60,
+          earth: 200,
+          fire: 100,
+          wind: -50,
+          poison: 75,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3221,
+      name: 'Arcebispa Margaretha',
+      level: 187,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.holy,
+      hp: 14400000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3221.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 0,
+          earth: 0,
+          fire: 0,
+          wind: 0,
+          poison: 0,
+          holy: -100,
+          dark: 200,
+          ghost: 0,
+          undead: 175),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3223,
+      name: 'Mecânico Harword',
+      level: 187,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.water,
+      hp: 18000000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3223.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: -50,
+          earth: 100,
+          fire: 60,
+          wind: 200,
+          poison: 25,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3224,
+      name: 'Arcana Kathryne',
+      level: 187,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.ghost,
+      hp: 10800000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3224.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 0,
+          water: 100,
+          earth: 100,
+          fire: 100,
+          wind: 100,
+          poison: 25,
+          holy: 100,
+          dark: 100,
+          ghost: 200,
+          undead: 100),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3240,
+      name: 'Guardião Real Randel',
+      level: 188,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.holy,
+      hp: 18000000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3240.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 0,
+          earth: 0,
+          fire: 0,
+          wind: 0,
+          poison: 0,
+          holy: -100,
+          dark: 200,
+          ghost: 0,
+          undead: 175),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3242,
+      name: 'Feiticeira Celia',
+      level: 188,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.ghost,
+      hp: 16200000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3242.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 0,
+          water: 100,
+          earth: 100,
+          fire: 100,
+          wind: 100,
+          poison: 25,
+          holy: 100,
+          dark: 100,
+          ghost: 200,
+          undead: 100),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3243,
+      name: 'Shura Chen',
+      level: 188,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.water,
+      hp: 12600000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3243.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: -50,
+          earth: 100,
+          fire: 60,
+          wind: 200,
+          poison: 25,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3244,
+      name: 'Renegada Gertie',
+      level: 188,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.poison,
+      hp: 14400000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3244.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 75,
+          earth: 75,
+          fire: 75,
+          wind: 75,
+          poison: 0,
+          holy: 125,
+          dark: -25,
+          ghost: 25,
+          undead: -25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3220,
+      name: 'Sicário Eremes',
+      level: 189,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.poison,
+      hp: 12600000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3220.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 75,
+          earth: 75,
+          fire: 75,
+          wind: 75,
+          poison: 0,
+          holy: 125,
+          dark: -25,
+          ghost: 25,
+          undead: -25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3222,
+      name: 'Sentinela Cecil',
+      level: 189,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.wind,
+      hp: 12600000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3222.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 60,
+          earth: 200,
+          fire: 100,
+          wind: -50,
+          poison: 75,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+  MvP(
+      id: 3225,
+      name: 'Cavaleiro Rúnico Seyren',
+      level: 189,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.fire,
+      hp: 14400000,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3225.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 200,
+          earth: 60,
+          fire: -50,
+          wind: 100,
+          poison: 75,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [thMap]),
+];
+
+List<MvP> inMvPs = [];
+
 List<MvP> owMvPs = [
   MvP(
       id: 3505,
@@ -255,7 +559,11 @@ List<MvP> owMvPs = [
           ghost: 50,
           undead: 50),
       spawnMaps: [
-        SpawnMap(name: 'Ninho do Dragão', mapId: 'lasa_dun01', respawn: 1)
+        SpawnMap(
+            name: 'Ninho do Dragão',
+            mapId: 'lasa_dun01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/lasa_dun01',
+            respawn: 60)
       ]),
   MvP(
       id: 1087,
@@ -280,7 +588,10 @@ List<MvP> owMvPs = [
           undead: 75),
       spawnMaps: [
         SpawnMap(
-            name: 'Arredores de Geffen (3)', mapId: 'gef_fild03', respawn: 1)
+            name: 'Arredores de Geffen (3)',
+            mapId: 'gef_fild03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gef_fild03',
+            respawn: 60)
       ]),
   MvP(
       id: 1147,
@@ -305,13 +616,20 @@ List<MvP> owMvPs = [
           undead: 25),
       spawnMaps: [
         SpawnMap(
-            name: 'Formigueiro Infernal (2)', mapId: 'anthell02', respawn: 2),
+            name: 'Formigueiro Infernal (2)',
+            mapId: 'anthell02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/anthell02',
+            respawn: 60),
         SpawnMap(
             name: 'Calabouço das Valquírias (1)',
             mapId: 'gld_dun03',
-            respawn: 8),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun03',
+            respawn: 480),
         SpawnMap(
-            name: 'Calabouço de Luina (1)', mapId: 'gld_dun02_2', respawn: 8),
+            name: 'Calabouço de Luina (1)',
+            mapId: 'gld_dun02_2',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun02_2',
+            respawn: 480),
       ]),
   MvP(
       id: 1190,
@@ -336,7 +654,10 @@ List<MvP> owMvPs = [
           undead: 25),
       spawnMaps: [
         SpawnMap(
-            name: 'Arredores de Geffen (10)', mapId: 'gef_fild10', respawn: 2)
+            name: 'Arredores de Geffen (10)',
+            mapId: 'gef_fild10',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gef_fild10',
+            respawn: 60)
       ]),
   MvP(
       id: 1086,
@@ -361,7 +682,10 @@ List<MvP> owMvPs = [
           undead: 75),
       spawnMaps: [
         SpawnMap(
-            name: 'Esgotos de Prontera (4)', mapId: 'prt_sewb4', respawn: 1)
+            name: 'Esgotos de Prontera (4)',
+            mapId: 'prt_sewb4',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/prt_sewb4',
+            respawn: 60)
       ]),
   MvP(
       id: 1115,
@@ -386,15 +710,20 @@ List<MvP> owMvPs = [
           undead: 100),
       spawnMaps: [
         SpawnMap(
-            name: 'Floresta de Payon (10)', mapId: 'pay_fild10', respawn: 2),
+            name: 'Floresta de Payon (10)',
+            mapId: 'pay_fild10',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/pay_fild10',
+            respawn: 60),
         SpawnMap(
             name: 'Calabouço do Bosque Celestial (1)',
             mapId: 'gld_dun01',
-            respawn: 8),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun01',
+            respawn: 480),
         SpawnMap(
             name: 'Calabouço do Bosque Celestial (1)',
             mapId: 'gld_dun01_2',
-            respawn: 8),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun01_2',
+            respawn: 480),
       ]),
   MvP(
       id: 1038,
@@ -418,7 +747,11 @@ List<MvP> owMvPs = [
           ghost: 175,
           undead: 0),
       spawnMaps: [
-        SpawnMap(name: 'Pirâmide (4)', mapId: 'moc_pryd04', respawn: 1)
+        SpawnMap(
+            name: 'Pirâmide (4)',
+            mapId: 'moc_pryd04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/moc_pryd04',
+            respawn: 60)
       ]),
   MvP(
       id: 1511,
@@ -443,7 +776,10 @@ List<MvP> owMvPs = [
           undead: 50),
       spawnMaps: [
         SpawnMap(
-            name: 'Subsolo da Pirâmide (2)', mapId: 'moc_pryd06', respawn: 1)
+            name: 'Subsolo da Pirâmide (2)',
+            mapId: 'moc_pryd06',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/moc_pryd06',
+            respawn: 60)
       ]),
   MvP(
       id: 1159,
@@ -468,7 +804,10 @@ List<MvP> owMvPs = [
           undead: 100),
       spawnMaps: [
         SpawnMap(
-            name: 'Deserto de Sograt (17)', mapId: 'moc_fild17', respawn: 2)
+            name: 'Deserto de Sograt (17)',
+            mapId: 'moc_fild17',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/moc_fild17',
+            respawn: 60)
       ]),
   MvP(
       id: 1389,
@@ -493,7 +832,10 @@ List<MvP> owMvPs = [
           undead: 0),
       spawnMaps: [
         SpawnMap(
-            name: 'Calabouço de Geffen (1)', mapId: 'gef_dun01', respawn: 1)
+            name: 'Calabouço de Geffen (1)',
+            mapId: 'gef_dun01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gef_dun01',
+            respawn: 60)
       ]),
   MvP(
       id: 1046,
@@ -518,11 +860,20 @@ List<MvP> owMvPs = [
           undead: 0),
       spawnMaps: [
         SpawnMap(
-            name: 'Calabouço de Geffen (2)', mapId: 'gef_dun02', respawn: 2),
+            name: 'Calabouço de Geffen (2)',
+            mapId: 'gef_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gef_dun02',
+            respawn: 60),
         SpawnMap(
-            name: 'Calabouço de Luina (1)', mapId: 'gld_dun02', respawn: 8),
+            name: 'Calabouço de Luina (1)',
+            mapId: 'gld_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun02',
+            respawn: 480),
         SpawnMap(
-            name: 'Calabouço de Britoniah (1)', mapId: 'gld_dun04', respawn: 8),
+            name: 'Calabouço de Britoniah (1)',
+            mapId: 'gld_dun04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun04',
+            respawn: 480),
       ]),
   MvP(
       id: 1059,
@@ -546,8 +897,16 @@ List<MvP> owMvPs = [
           ghost: 25,
           undead: 25),
       spawnMaps: [
-        SpawnMap(name: 'Monte Mjolnir (4)', mapId: 'mjolnir_04', respawn: 2),
-        SpawnMap(name: 'Calabouço de Luina (1)', mapId: 'gld_dun02', respawn: 8)
+        SpawnMap(
+            name: 'Monte Mjolnir (4)',
+            mapId: 'mjolnir_04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/mjolnir_04',
+            respawn: 60),
+        SpawnMap(
+            name: 'Calabouço de Luina (1)',
+            mapId: 'gld_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun02',
+            respawn: 480)
       ]),
   MvP(
       id: 1150,
@@ -571,11 +930,16 @@ List<MvP> owMvPs = [
           ghost: 50,
           undead: 50),
       spawnMaps: [
-        SpawnMap(name: 'Caverna de Payon (4)', mapId: 'pay_dun04', respawn: 1),
+        SpawnMap(
+            name: 'Caverna de Payon (4)',
+            mapId: 'pay_dun04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/pay_dun04',
+            respawn: 60),
         SpawnMap(
             name: 'Calabouço do Bosque Celestial (1)',
             mapId: 'gld_dun01',
-            respawn: 8)
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun01',
+            respawn: 480)
       ]),
   MvP(
       id: 1688,
@@ -599,7 +963,11 @@ List<MvP> owMvPs = [
           ghost: 50,
           undead: 50),
       spawnMaps: [
-        SpawnMap(name: 'Santuário Ancestral', mapId: 'ayo_dun02', respawn: 7)
+        SpawnMap(
+            name: 'Santuário Ancestral',
+            mapId: 'ayo_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ayo_dun02',
+            respawn: 420)
       ]),
   MvP(
       id: 1039,
@@ -624,11 +992,15 @@ List<MvP> owMvPs = [
           undead: 0),
       spawnMaps: [
         SpawnMap(
-            name: 'Labirinto da Floresta (3)', mapId: 'prt_maze03', respawn: 2),
+            name: 'Labirinto da Floresta (3)',
+            mapId: 'prt_maze03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/prt_maze03',
+            respawn: 60),
         SpawnMap(
             name: 'Calabouço das Valquírias (1)',
             mapId: 'gld_dun03',
-            respawn: 8),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun03',
+            respawn: 480),
       ]),
   MvP(
       id: 1157,
@@ -652,7 +1024,44 @@ List<MvP> owMvPs = [
           ghost: 25,
           undead: 0),
       spawnMaps: [
-        SpawnMap(name: 'Esfinge (5)', mapId: 'in_sphinx5', respawn: 1),
+        SpawnMap(
+            name: 'Esfinge (5)',
+            mapId: 'in_sphinx5',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/in_sphinx5',
+            respawn: 60),
+      ]),
+  MvP(
+      id: 1980,
+      name: 'Kublin',
+      level: 85,
+      race: Races.human,
+      size: MvPSizes.medium,
+      element: Elements.earth,
+      hp: 633600,
+      greenAura: false,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/1157.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 100,
+          earth: 25,
+          fire: 150,
+          wind: 90,
+          poison: 125,
+          holy: 100,
+          dark: 100,
+          ghost: 100,
+          undead: 100),
+      spawnMaps: [
+        SpawnMap(
+            name: 'Calabouço de Nithafjoll',
+            mapId: 'schg_dun01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/schg_dun01',
+            respawn: 0),
+        SpawnMap(
+            name: 'Calabouço de Valfreyja',
+            mapId: 'arug_dun01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/arug_dun01',
+            respawn: 0)
       ]),
   MvP(
       id: 1112,
@@ -676,7 +1085,11 @@ List<MvP> owMvPs = [
           ghost: 100,
           undead: 0),
       spawnMaps: [
-        SpawnMap(name: 'Navio Fantasma (2)', mapId: 'treasure02', respawn: 2),
+        SpawnMap(
+            name: 'Navio Fantasma (2)',
+            mapId: 'treasure02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/treasure02',
+            respawn: 60),
       ]),
   MvP(
       id: 1251,
@@ -703,7 +1116,8 @@ List<MvP> owMvPs = [
         SpawnMap(
             name: 'Fábrica de Brinquedos (2)',
             mapId: 'xmas_dun02',
-            respawn: 1.117),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/xmas_dun02',
+            respawn: 67),
       ]),
   MvP(
       id: 2068,
@@ -730,7 +1144,8 @@ List<MvP> owMvPs = [
         SpawnMap(
             name: 'Profundezas das Cataratas',
             mapId: 'bra_dun02',
-            respawn: 1.117),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/bra_dun02',
+            respawn: 120),
       ]),
   MvP(
       id: 2156,
@@ -754,7 +1169,11 @@ List<MvP> owMvPs = [
           ghost: 50,
           undead: 0),
       spawnMaps: [
-        SpawnMap(name: 'Vulcão Krakatau', mapId: 'dew_dun01', respawn: 2),
+        SpawnMap(
+            name: 'Vulcão Krakatau',
+            mapId: 'dew_dun01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/dew_dun01',
+            respawn: 60),
       ]),
   MvP(
       id: 1373,
@@ -778,7 +1197,11 @@ List<MvP> owMvPs = [
           ghost: 25,
           undead: 0),
       spawnMaps: [
-        SpawnMap(name: 'Nifflheim', mapId: 'niflheim', respawn: 2.217),
+        SpawnMap(
+            name: 'Nifflheim',
+            mapId: 'niflheim',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/niflheim',
+            respawn: 133),
       ]),
   MvP(
       id: 1272,
@@ -803,15 +1226,25 @@ List<MvP> owMvPs = [
           undead: 0),
       spawnMaps: [
         SpawnMap(
-            name: 'Cemitério de Glast Heim', mapId: 'gl_chyard', respawn: 1),
+            name: 'Cemitério de Glast Heim',
+            mapId: 'gl_chyard',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gl_chyard',
+            respawn: 60),
         SpawnMap(
-            name: 'Cemitério de Glast Heim', mapId: 'gl_chyard_', respawn: 1),
+            name: 'Cemitério de Glast Heim',
+            mapId: 'gl_chyard_',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gl_chyard_',
+            respawn: 60),
         SpawnMap(
-            name: 'Calabouço de Britoniah (1)', mapId: 'gld_dun04', respawn: 8),
+            name: 'Calabouço de Britoniah (1)',
+            mapId: 'gld_dun04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun04',
+            respawn: 480),
         SpawnMap(
             name: 'Calabouço de Britoniah (1)',
             mapId: 'gld_dun04_2',
-            respawn: 8),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun04_2',
+            respawn: 480),
       ]),
   MvP(
       id: 1885,
@@ -836,7 +1269,10 @@ List<MvP> owMvPs = [
           undead: 50),
       spawnMaps: [
         SpawnMap(
-            name: 'Floresta Encantada (3)', mapId: 'mosk_dun03', respawn: 2),
+            name: 'Floresta Encantada (3)',
+            mapId: 'mosk_dun03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/mosk_dun03',
+            respawn: 60),
       ]),
   MvP(
       id: 1630,
@@ -860,7 +1296,11 @@ List<MvP> owMvPs = [
           ghost: 50,
           undead: 50),
       spawnMaps: [
-        SpawnMap(name: 'Suei Long Gon', mapId: 'lou_dun03', respawn: 1.933),
+        SpawnMap(
+            name: 'Suei Long Gon',
+            mapId: 'lou_dun03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/lou_dun03',
+            respawn: 1.933),
       ]),
   MvP(
       id: 1252,
@@ -884,7 +1324,11 @@ List<MvP> owMvPs = [
           ghost: 25,
           undead: 25),
       spawnMaps: [
-        SpawnMap(name: 'Arredores de Lutie', mapId: 'xmas_fild01', respawn: 2),
+        SpawnMap(
+            name: 'Arredores de Lutie',
+            mapId: 'xmas_fild01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/xmas_fild01',
+            respawn: 60),
       ]),
   MvP(
       id: 1779,
@@ -908,7 +1352,11 @@ List<MvP> owMvPs = [
           ghost: 25,
           undead: 25),
       spawnMaps: [
-        SpawnMap(name: 'Caverna de Gelo (3)', mapId: 'ice_dun03', respawn: 2),
+        SpawnMap(
+            name: 'Caverna de Gelo (3)',
+            mapId: 'ice_dun03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ice_dun03',
+            respawn: 60),
       ]),
   MvP(
       id: 1708,
@@ -933,7 +1381,10 @@ List<MvP> owMvPs = [
           undead: 100),
       spawnMaps: [
         SpawnMap(
-            name: 'Topo da Torre de Thanatos', mapId: 'thana_boss', respawn: 2),
+            name: 'Topo da Torre de Thanatos',
+            mapId: 'thana_boss',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/thana_boss',
+            respawn: 60),
       ]),
   MvP(
       id: 2442,
@@ -958,7 +1409,10 @@ List<MvP> owMvPs = [
           undead: 25),
       spawnMaps: [
         SpawnMap(
-            name: 'Calabouço de Luina (1)', mapId: 'teg_dun02', respawn: 3),
+            name: 'Calabouço de Luina (1)',
+            mapId: 'teg_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/teg_dun02',
+            respawn: 180),
       ]),
   MvP(
       id: 2441,
@@ -985,7 +1439,8 @@ List<MvP> owMvPs = [
         SpawnMap(
             name: 'Calabouço das Valquírias (1)',
             mapId: 'teg_dun01',
-            respawn: 3),
+            mapUrl: 'https://www.divine-pride.net/img/map/original/teg_dun01',
+            respawn: 180),
       ]),
   MvP(
       id: 1623,
@@ -1010,7 +1465,10 @@ List<MvP> owMvPs = [
           undead: 100),
       spawnMaps: [
         SpawnMap(
-            name: 'Calabouço da Mina (2)', mapId: 'ein_dun02', respawn: 2.0833),
+            name: 'Calabouço da Mina (2)',
+            mapId: 'ein_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ein_dun02',
+            respawn: 125),
       ]),
   MvP(
       id: 1492,
@@ -1035,7 +1493,10 @@ List<MvP> owMvPs = [
           undead: 0),
       spawnMaps: [
         SpawnMap(
-            name: 'Templo Subterrâneo', mapId: 'ama_dun03', respawn: 1.516),
+            name: 'Templo Subterrâneo',
+            mapId: 'ama_dun03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ama_dun03',
+            respawn: 91),
       ]),
   MvP(
       id: 1418,
@@ -1059,7 +1520,11 @@ List<MvP> owMvPs = [
           ghost: 175,
           undead: 100),
       spawnMaps: [
-        SpawnMap(name: 'Terra das Fadas', mapId: 'gon_dun03', respawn: 1.566),
+        SpawnMap(
+            name: 'Terra das Fadas',
+            mapId: 'gon_dun03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gon_dun03',
+            respawn: 94),
       ]),
   MvP(
       id: 1583,
@@ -1084,7 +1549,10 @@ List<MvP> owMvPs = [
           undead: 100),
       spawnMaps: [
         SpawnMap(
-            name: 'Karu, a Caverna do Oeste', mapId: 'beach_dun', respawn: 5),
+            name: 'Karu, a Caverna do Oeste',
+            mapId: 'beach_dun',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/beach_dun',
+            respawn: 300),
       ]),
   MvP(
       id: 1312,
@@ -1108,6 +1576,170 @@ List<MvP> owMvPs = [
           ghost: 75,
           undead: 75),
       spawnMaps: [
-        SpawnMap(name: 'Palácio Tartaruga', mapId: 'tur_dun04', respawn: 1),
+        SpawnMap(
+            name: 'Palácio Tartaruga',
+            mapId: 'tur_dun04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/tur_dun04',
+            respawn: 60),
       ]),
+  MvP(
+      id: 3633,
+      name: 'Quimera Venenosa',
+      level: 110,
+      race: Races.brute,
+      size: MvPSizes.large,
+      element: Elements.poison,
+      hp: 2800000,
+      greenAura: true,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3633.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 75,
+          earth: 75,
+          fire: 75,
+          wind: 75,
+          poison: 0,
+          holy: 125,
+          dark: -25,
+          ghost: 25,
+          undead: -25),
+      spawnMaps: [
+        SpawnMap(
+            name: 'Laboratório Werner',
+            mapId: 'slabw01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/slabw01',
+            respawn: 60)
+      ]),
+  MvP(
+      id: 1785,
+      name: 'Atroce',
+      level: 113,
+      race: Races.brute,
+      size: MvPSizes.large,
+      element: Elements.dark,
+      hp: 1502000,
+      greenAura: true,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/1785.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 50,
+          earth: 50,
+          fire: 50,
+          wind: 50,
+          poison: 0,
+          holy: 175,
+          dark: -50,
+          ghost: 25,
+          undead: 0),
+      spawnMaps: [
+        SpawnMap(
+            name: 'Planície de Ida',
+            mapId: 'ra_fild03',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ra_fild03',
+            respawn: 180),
+        SpawnMap(
+            name: 'Pradaria Audhumbla',
+            mapId: 'ra_fild04',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ra_fild04',
+            respawn: 300),
+        SpawnMap(
+            name: 'Arredores de Veins (1)',
+            mapId: 've_fild01',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ve_fild01',
+            respawn: 180),
+        SpawnMap(
+            name: 'Arredores de Veins (2)',
+            mapId: 've_fild02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/ve_fild02',
+            respawn: 360),
+        SpawnMap(
+            name: 'Calabouço das Valquírias (1)',
+            mapId: 'gld_dun03_2',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/gld_dun03_2',
+            respawn: 480)
+      ]),
+  MvP(
+      id: 3758,
+      name: 'Ilusão do Luar',
+      level: 118,
+      race: Races.demon,
+      size: MvPSizes.medium,
+      element: Elements.fire,
+      hp: 4287803,
+      greenAura: true,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/3758.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 200,
+          earth: 70,
+          fire: -25,
+          wind: 100,
+          poison: 100,
+          holy: 100,
+          dark: 100,
+          ghost: 50,
+          undead: 50),
+      spawnMaps: [
+        SpawnMap(
+            name: 'Ilusão da Lua',
+            mapId: 'pay_d03_i',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/pay_d03_i',
+            respawn: 0)
+      ]),
+  MvP(
+      id: 2202,
+      name: 'Kraken',
+      level: 124,
+      race: Races.fish,
+      size: MvPSizes.large,
+      element: Elements.water,
+      hp: 5602800,
+      greenAura: true,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/2202.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: -50,
+          earth: 100,
+          fire: 60,
+          wind: 200,
+          poison: 25,
+          holy: 75,
+          dark: 75,
+          ghost: 25,
+          undead: 25),
+      spawnMaps: [
+        SpawnMap(
+            name: 'Túnel Submarino (5)',
+            mapId: 'iz_dun05',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/iz_dun05',
+            respawn: 140)
+      ]),
+  MvP(
+      id: 1734,
+      name: 'Kiel-D-01',
+      level: 125,
+      race: Races.formless,
+      size: MvPSizes.medium,
+      element: Elements.dark,
+      hp: 2502000,
+      greenAura: true,
+      gifUrl: 'https://static.ragnaplace.com/db/npc/gif/1734.gif',
+      elementsDamage: ElementsDamage(
+          neutral: 100,
+          water: 75,
+          earth: 75,
+          fire: 75,
+          wind: 75,
+          poison: 25,
+          holy: 150,
+          dark: -25,
+          ghost: 50,
+          undead: 0),
+      spawnMaps: [
+        SpawnMap(
+            name: 'Fábrica de Robôs (2)',
+            mapId: 'kh_dun02',
+            mapUrl: 'https://www.divine-pride.net/img/map/original/kh_dun02',
+            respawn: 120)
+      ])
 ];

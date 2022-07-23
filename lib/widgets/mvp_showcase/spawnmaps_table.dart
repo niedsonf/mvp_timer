@@ -10,27 +10,38 @@ class SpawnmapsTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Table(
       columnWidths: {
-        0: FlexColumnWidth(3),
+        0: FlexColumnWidth(2),
         1: FlexColumnWidth(2),
-        2: FlexColumnWidth(1)
+        2: FlexColumnWidth(2),
+        3: FlexColumnWidth(1),
       },
       border: TableBorder.all(color: darker),
       children: [
         TableRow(decoration: BoxDecoration(color: neutralColor), children: [
           Container(
-              padding: EdgeInsets.symmetric(vertical: 2),
+              alignment: AlignmentDirectional.center,
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: Text('Mapa',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: darker, fontSize: 16, letterSpacing: 1.3))),
           Container(
-              padding: EdgeInsets.symmetric(vertical: 2),
+              alignment: AlignmentDirectional.center,
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Text('Mapa',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: darker, fontSize: 16, letterSpacing: 1.3))),
+          Container(
+              alignment: AlignmentDirectional.center,
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: Text('ID',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: darker, fontSize: 16, letterSpacing: 1.3))),
           Container(
-              padding: EdgeInsets.symmetric(vertical: 2),
+              alignment: AlignmentDirectional.center,
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: Text('Respawn',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -39,19 +50,30 @@ class SpawnmapsTable extends StatelessWidget {
         ...mvp.spawnMaps.map((e) =>
             TableRow(decoration: BoxDecoration(color: neutralColor), children: [
               Container(
-                  padding: EdgeInsets.symmetric(vertical: 2),
+                  alignment: AlignmentDirectional.center,
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Image.network(
+                    e.mapUrl,
+                    width: 100,
+                    height: 100,
+                  )),
+              Container(
+                  alignment: AlignmentDirectional.center,
+                  padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Text(e.name,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: darker, fontSize: 16, letterSpacing: 1.3))),
               Container(
-                  padding: EdgeInsets.symmetric(vertical: 2),
+                  alignment: AlignmentDirectional.center,
+                  padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Text(e.mapId,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: darker, fontSize: 16, letterSpacing: 1.3))),
               Container(
-                  padding: EdgeInsets.symmetric(vertical: 2),
+                  alignment: AlignmentDirectional.center,
+                  padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Text(e.respawn.toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(

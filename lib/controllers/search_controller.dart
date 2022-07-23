@@ -12,12 +12,19 @@ class SearchController extends GetxController {
   Rx<DB.Race?> selectedRace = DB.Races.all.obs;
   Rx<DB.Element?> selectedElement = DB.Elements.all.obs;
   Rx<DB.MvPSize?> selectedSize = DB.MvPSizes.all.obs;
-  RxList<MvPHero> theShowcase =
+  RxBool owShow = true.obs;
+  RxBool inShow = true.obs;
+  RxBool thShow = true.obs;
+  RxList<MvPHero> owShowcase =
       [...DB.owMvPs.map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))].obs;
+  RxList<MvPHero> inShowcase =
+      [...DB.inMvPs.map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))].obs;
+  RxList<MvPHero> thShowcase =
+      [...DB.thMvPs.map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))].obs;
 
-  getNewShowcase() {
-    theShowcase.value = RxList<MvPHero>([
-      ...DB.owMvPs.where((mvp) {
+  getNewShowcase(RxList<MvPHero> obs, List<DB.MvP> list) {
+    obs.value = RxList<MvPHero>([
+      ...list.where((mvp) {
         List<Function(DB.MvP mvp)> conditions = [];
         if (searchText.value != '') {
           conditions.add((mvp) => mvp.name.toLowerCase().contains(searchText));
@@ -43,6 +50,8 @@ class SearchController extends GetxController {
     selectedRace.value = race ?? selectedRace.value;
     selectedElement.value = element ?? selectedElement.value;
     selectedSize.value = size ?? selectedSize.value;
-    getNewShowcase();
+    getNewShowcase(owShowcase, DB.owMvPs);
+    getNewShowcase(inShowcase, DB.inMvPs);
+    getNewShowcase(thShowcase, DB.thMvPs);
   }
 }

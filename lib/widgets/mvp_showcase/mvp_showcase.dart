@@ -25,6 +25,7 @@ class MvPShowcase extends StatelessWidget {
       body: Hero(
         tag: tag,
         child: Container(
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -34,7 +35,6 @@ class MvPShowcase extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
-                  padding: const EdgeInsets.only(left: 20, right: 10),
                   decoration: BoxDecoration(
                       border:
                           Border.all(width: 1, color: light.withOpacity(.5)),
@@ -71,6 +71,7 @@ class MvPShowcase extends StatelessWidget {
                             CustomText(
                                 text: '❤HP ${applyHPMask(mvp.hp)}',
                                 color: Colors.red),
+                            const SizedBox(height: 15),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -93,17 +94,22 @@ class MvPShowcase extends StatelessWidget {
                       ),
                       Expanded(
                           flex: 3,
-                          child: ListView(
-                            children: [
-                              SizedBox(
-                                width: _size.width * 0.4,
-                                child: ElementsDamageTable(mvp: mvp),
-                              ),
-                              SizedBox(
-                                width: _size.width * 0.4,
-                                child: SpawnmapsTable(mvp: mvp),
-                              )
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 15),
+                            child: ListView(
+                              children: [
+                                SizedBox(
+                                  width: _size.width * 0.4,
+                                  child: ElementsDamageTable(mvp: mvp),
+                                ),
+                                const SizedBox(height: 20),
+                                SizedBox(
+                                  width: _size.width * 0.4,
+                                  child: SpawnmapsTable(mvp: mvp),
+                                )
+                              ],
+                            ),
                           ))
                     ],
                   )),
