@@ -202,7 +202,7 @@ class SpawnMap {
   final String name;
   final String mapId;
   final String mapUrl;
-  final double respawn;
+  final int respawn;
   SpawnMap(
       {required this.name,
       required this.mapId,
@@ -1300,7 +1300,7 @@ List<MvP> owMvPs = [
             name: 'Suei Long Gon',
             mapId: 'lou_dun03',
             mapUrl: 'https://www.divine-pride.net/img/map/original/lou_dun03',
-            respawn: 1.933),
+            respawn: 116),
       ]),
   MvP(
       id: 1252,

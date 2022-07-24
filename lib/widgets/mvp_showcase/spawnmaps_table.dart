@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
+import 'package:mvp_timer/helpers/mask.dart';
 
 class SpawnmapsTable extends StatelessWidget {
   final MvP mvp;
@@ -20,38 +21,34 @@ class SpawnmapsTable extends StatelessWidget {
         TableRow(decoration: BoxDecoration(color: neutralColor), children: [
           Container(
               alignment: AlignmentDirectional.center,
-              padding: const EdgeInsets.symmetric(vertical: 4),
+              padding: const EdgeInsets.all(4),
               child: Text('Mapa',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: darker, fontSize: 16, letterSpacing: 1.3))),
+                  style: TextStyle(color: darker, fontSize: 16))),
           Container(
               alignment: AlignmentDirectional.center,
-              padding: const EdgeInsets.symmetric(vertical: 4),
+              padding: const EdgeInsets.all(4),
               child: Text('Mapa',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: darker, fontSize: 16, letterSpacing: 1.3))),
+                  style: TextStyle(color: darker, fontSize: 16))),
           Container(
               alignment: AlignmentDirectional.center,
-              padding: const EdgeInsets.symmetric(vertical: 4),
+              padding: const EdgeInsets.all(4),
               child: Text('ID',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: darker, fontSize: 16, letterSpacing: 1.3))),
+                  style: TextStyle(color: darker, fontSize: 16))),
           Container(
               alignment: AlignmentDirectional.center,
-              padding: const EdgeInsets.symmetric(vertical: 4),
+              padding: const EdgeInsets.all(4),
               child: Text('Respawn',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: darker, fontSize: 16, letterSpacing: 1.3))),
+                  style: TextStyle(color: darker, fontSize: 16))),
         ]),
         ...mvp.spawnMaps.map((e) =>
             TableRow(decoration: BoxDecoration(color: neutralColor), children: [
               Container(
                   alignment: AlignmentDirectional.center,
-                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  padding: const EdgeInsets.all(4),
                   child: Image.network(
                     e.mapUrl,
                     width: 100,
@@ -59,25 +56,22 @@ class SpawnmapsTable extends StatelessWidget {
                   )),
               Container(
                   alignment: AlignmentDirectional.center,
-                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  padding: const EdgeInsets.all(4),
                   child: Text(e.name,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: darker, fontSize: 16, letterSpacing: 1.3))),
+                      style: TextStyle(color: darker, fontSize: 16))),
               Container(
                   alignment: AlignmentDirectional.center,
-                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  padding: const EdgeInsets.all(4),
                   child: Text(e.mapId,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: darker, fontSize: 16, letterSpacing: 1.3))),
+                      style: TextStyle(color: darker, fontSize: 16))),
               Container(
                   alignment: AlignmentDirectional.center,
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Text(e.respawn.toString(),
+                  padding: const EdgeInsets.all(4),
+                  child: Text(getTimeFormat(e.respawn),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: darker, fontSize: 16, letterSpacing: 1.3))),
+                      style: TextStyle(color: darker, fontSize: 16))),
             ]))
       ],
     );

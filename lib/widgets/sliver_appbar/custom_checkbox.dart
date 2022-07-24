@@ -22,6 +22,7 @@ class CustomCheckbox extends StatefulWidget {
 class _CustomCheckboxState extends State<CustomCheckbox> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     var content;
     switch (widget.group) {
       case MvPGroup.OW:
@@ -36,16 +37,46 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
       default:
     }
     ;
+    FocusNode checkboxFocus = FocusNode();
+    FocusNode none = FocusNode();
     return Obx(
-      () => Row(
-        children: [
-          Checkbox(
-              value: content.value,
-              onChanged: (value) {
-                content.value = value;
-              }),
-          CustomText(text: widget.text, color: darker)
-        ],
+      () => InkWell(
+        onTap: () {
+          setState(() {
+            content.value = !content.value;
+          });
+        },
+        onHover: (value) {
+          value
+              ? FocusScope.of(context).requestFocus(checkboxFocus)
+              : FocusScope.of(context).requestFocus(none);
+        },
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Checkbox(
+                    splashRadius: 15,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    focusNode: checkboxFocus,
+                    activeColor: blue,
+                    value: content.value,
+                    onChanged: (value) {
+                      content.value = value;
+                    }),
+                CustomText(text: widget.text, color: darker),
+              ],
+            ),
+            SizedBox(height: 0, width: size.width * 0.07),
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              height: 2,
+              width: content.value ? size.width * 0.07 : 0,
+              decoration: BoxDecoration(color: blue),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -19,11 +19,10 @@ class _SearchOptionsState extends State<SearchOptions> {
   Widget build(BuildContext context) {
     return Obx(
       () => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text('Elemento', style: TextStyle(color: light, fontSize: 14)),
@@ -44,7 +43,6 @@ class _SearchOptionsState extends State<SearchOptions> {
             ],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text('Raça', style: TextStyle(color: light, fontSize: 14)),
@@ -65,7 +63,6 @@ class _SearchOptionsState extends State<SearchOptions> {
             ],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text('Tamanho', style: TextStyle(color: light, fontSize: 14)),
@@ -86,16 +83,21 @@ class _SearchOptionsState extends State<SearchOptions> {
             ],
           ),
           Transform.translate(
-            offset: const Offset(0, 40),
+            offset: const Offset(0, 10),
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-              decoration: BoxDecoration(boxShadow: const <BoxShadow>[
-                BoxShadow(
-                  offset: Offset(0, -4),
-                  blurRadius: 8,
-                  color: Colors.black26,
-                )
-              ], color: light, borderRadius: BorderRadius.circular(20)),
+              padding: const EdgeInsets.only(
+                  left: 20, right: 20, bottom: 20, top: 10),
+              decoration: BoxDecoration(
+                  boxShadow: const <BoxShadow>[
+                    BoxShadow(
+                      offset: Offset(0, -4),
+                      blurRadius: 8,
+                      color: Colors.black26,
+                    )
+                  ],
+                  color: light,
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(20))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -104,21 +106,23 @@ class _SearchOptionsState extends State<SearchOptions> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Mostrar',
-                          style: TextStyle(color: darker, fontSize: 14)),
+                      Text('Mostrar MvPs',
+                          style: TextStyle(color: darker, fontSize: 16)),
                       Row(
                         children: [
                           CustomCheckbox(
                               text: 'mapa aberto',
-                              contentController: searchController,
+                              contentController: widget.contentController,
                               group: DB.MvPGroup.OW),
+                          const SizedBox(width: 10),
                           CustomCheckbox(
                               text: 'instância',
-                              contentController: searchController,
+                              contentController: widget.contentController,
                               group: DB.MvPGroup.IN),
+                          const SizedBox(width: 10),
                           CustomCheckbox(
                               text: 'tumba da honra',
-                              contentController: searchController,
+                              contentController: widget.contentController,
                               group: DB.MvPGroup.TH),
                         ],
                       ),

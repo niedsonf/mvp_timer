@@ -14,9 +14,9 @@ class FavoritesController extends GetxController {
   Rx<DB.Race?> selectedRace = DB.Races.all.obs;
   Rx<DB.Element?> selectedElement = DB.Elements.all.obs;
   Rx<DB.MvPSize?> selectedSize = DB.MvPSizes.all.obs;
-  RxBool owShow = false.obs;
-  RxBool inShow = false.obs;
-  RxBool thShow = false.obs;
+  RxBool owShow = true.obs;
+  RxBool inShow = true.obs;
+  RxBool thShow = true.obs;
   RxList<String> favoritesList = [''].obs;
   RxList<MvPHero> owShowcase = [
     ...DB.owMvPs

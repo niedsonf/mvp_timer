@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:mvp_timer/constants/style.dart';
 
 class CustomTextInput extends StatelessWidget {
   final String labelText;
   final IconData icon;
+  final List<TextInputFormatter> inputFormatters;
   final TextEditingController inputController;
   TextInputType? inputType;
   CustomTextInput(
@@ -13,14 +13,15 @@ class CustomTextInput extends StatelessWidget {
       this.inputType,
       required this.inputController,
       required this.labelText,
-      required this.icon})
+      required this.icon,
+      required this.inputFormatters})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: inputType,
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      inputFormatters: inputFormatters,
       cursorColor: light,
       style: TextStyle(fontSize: 18, color: light),
       controller: inputController,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
@@ -21,31 +22,68 @@ class FavoritesPage extends StatelessWidget {
             height: 30,
           ),
         ),
-        const GroupTitle(text: 'MvPs de Mapa'),
-        GridShowcase(
-            contentController: favoritesController,
-            group: MvPGroup.OW,
-            color: lightDark),
-        const SliverToBoxAdapter(
-          child: SizedBox(
-            height: 30,
+        Obx(
+          () => SliverVisibility(
+              visible: favoritesController.owShow.value,
+              sliver: const GroupTitle(text: 'MvPs de Mapa Aberto')),
+        ),
+        Obx(
+          () => SliverVisibility(
+            visible: favoritesController.owShow.value,
+            sliver: GridShowcase(
+                contentController: favoritesController,
+                group: MvPGroup.OW,
+                color: lightDark),
           ),
         ),
-        const GroupTitle(text: 'MvPs de Instância'),
-        GridShowcase(
-            contentController: favoritesController,
-            group: MvPGroup.IN,
-            color: lightDark),
-        const SliverToBoxAdapter(
-          child: SizedBox(
-            height: 30,
+        Obx(
+          () => SliverVisibility(
+            visible: favoritesController.owShow.value,
+            sliver: const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 30,
+              ),
+            ),
           ),
         ),
-        const GroupTitle(text: 'MvPs da Tumba da Honra'),
-        GridShowcase(
-            contentController: favoritesController,
-            group: MvPGroup.TH,
-            color: lightDark),
+        Obx(
+          () => SliverVisibility(
+              visible: favoritesController.inShow.value,
+              sliver: const GroupTitle(text: 'MvPs de Instância')),
+        ),
+        Obx(
+          () => SliverVisibility(
+            visible: favoritesController.inShow.value,
+            sliver: GridShowcase(
+                contentController: favoritesController,
+                group: MvPGroup.IN,
+                color: lightDark),
+          ),
+        ),
+        Obx(
+          () => SliverVisibility(
+            visible: favoritesController.inShow.value,
+            sliver: const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 30,
+              ),
+            ),
+          ),
+        ),
+        Obx(
+          () => SliverVisibility(
+              visible: favoritesController.thShow.value,
+              sliver: const GroupTitle(text: 'MvPs da Tumba da Honra')),
+        ),
+        Obx(
+          () => SliverVisibility(
+            visible: favoritesController.thShow.value,
+            sliver: GridShowcase(
+                contentController: favoritesController,
+                group: MvPGroup.TH,
+                color: lightDark),
+          ),
+        ),
         const SliverToBoxAdapter(
           child: SizedBox(
             height: 30,

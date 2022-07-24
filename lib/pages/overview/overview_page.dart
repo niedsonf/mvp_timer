@@ -17,6 +17,7 @@ class OverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         MvPsSliverAppbar(
           contentController: searchController,

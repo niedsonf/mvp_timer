@@ -23,6 +23,5 @@ FloatingActionButton showcaseFloatingButton(BuildContext context) =>
                         end: Alignment.bottomCenter,
                         colors: [light.withOpacity(.3), light.withOpacity(.1)]),
                   ),
-                  child:
-                      Center(child: Icon(Icons.arrow_back, color: darker))))),
+                  child: Center(child: Icon(Icons.arrow_back, color: light))))),
     );

@@ -1,3 +1,5 @@
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
 String applyHPMask(double hp) {
   List<String> explodedHP = hp.toString().split('').reversed.toList();
   for (int i = 3; i < explodedHP.length; i += 4) {
@@ -5,3 +7,19 @@ String applyHPMask(double hp) {
   }
   return explodedHP.reversed.join();
 }
+
+String getTimeFormat(int value) {
+  final int hour = value ~/ 60;
+  final int minutes = value % 60;
+  return '${hour.toString().padLeft(2, "0")}h${minutes.toString().padLeft(2, "0")}';
+}
+
+MaskTextInputFormatter timeMaskFormatter() => MaskTextInputFormatter(
+    mask: '##:##',
+    filter: {"#": RegExp(r'[0-9]')},
+    type: MaskAutoCompletionType.lazy);
+
+MaskTextInputFormatter positionMaskFormatter() => MaskTextInputFormatter(
+    mask: '###',
+    filter: {"#": RegExp(r'[0-9]')},
+    type: MaskAutoCompletionType.lazy);

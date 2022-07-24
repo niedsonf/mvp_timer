@@ -4,10 +4,6 @@ import 'package:get/get.dart';
 import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
-import 'package:mvp_timer/helpers/mask.dart';
-import 'package:mvp_timer/helpers/responsiveness.dart';
-import 'package:mvp_timer/routing/routes.dart';
-import 'package:mvp_timer/widgets/element_text.dart';
 import 'package:mvp_timer/widgets/mvp_hero/hero_action_button.dart';
 import 'package:mvp_timer/widgets/mvp_hero/mvp_hero_info.dart';
 import 'package:mvp_timer/widgets/mvp_showcase/mvp_showcase.dart';
@@ -21,6 +17,7 @@ class MvPHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return Obx(
       () => Stack(
         alignment: AlignmentDirectional.center,
@@ -29,7 +26,7 @@ class MvPHero extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: Hero(
               tag: tag,
-              child: GestureDetector(
+              child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context,
@@ -78,6 +75,9 @@ class MvPHero extends StatelessWidget {
                       favoritesController.removeFavorite(mvp.id);
                       Get.snackbar('MvP removido dos favoritos D;',
                           'Não termine sua coleção assim!',
+                          maxWidth: _size.width * 0.4,
+                          shouldIconPulse: true,
+                          icon: Icon(Icons.heart_broken),
                           snackPosition: SnackPosition.BOTTOM,
                           duration: const Duration(seconds: 2));
                     },
@@ -89,7 +89,8 @@ class MvPHero extends StatelessWidget {
               child: HeroActionButton(
                   color: blue,
                   onTap: () => showDialog(
-                      context: context, builder: (context) => TimerDialog()),
+                      context: context,
+                      builder: (context) => TimerDialog(mvp: mvp)),
                   icon: Icons.timer)),
           Visibility(
             visible: !favoritesController.favoritesList.value
@@ -103,6 +104,9 @@ class MvPHero extends StatelessWidget {
                       favoritesController.addFavorite(mvp.id);
                       Get.snackbar('MvP favoritado ;D',
                           'Que tal adicionarmos mais um a lista de caça?',
+                          shouldIconPulse: true,
+                          icon: Icon(Icons.favorite),
+                          maxWidth: _size.width * 0.4,
                           snackPosition: SnackPosition.BOTTOM,
                           duration: const Duration(seconds: 2));
                     },
