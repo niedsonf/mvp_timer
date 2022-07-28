@@ -20,6 +20,7 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
+        overflow: TextOverflow.clip,
         textAlign: tAlign ?? TextAlign.start,
         style: TextStyle(
             color: color ?? light,

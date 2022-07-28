@@ -34,10 +34,10 @@ class CustomTextInput extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: light, width: 2),
+            borderSide: BorderSide(color: light, width: 1),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: light, width: 2),
+            borderSide: BorderSide(color: light, width: 1),
           ),
           suffixIcon: Icon(icon, color: light, size: 20)),
     );

@@ -21,17 +21,17 @@ class FavoritesController extends GetxController {
   RxList<MvPHero> owShowcase = [
     ...DB.owMvPs
         .where((mvp) => false)
-        .map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+        .map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))
   ].obs;
   RxList<MvPHero> inShowcase = [
     ...DB.inMvPs
         .where((mvp) => false)
-        .map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+        .map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))
   ].obs;
   RxList<MvPHero> thShowcase = [
     ...DB.thMvPs
         .where((mvp) => false)
-        .map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+        .map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))
   ].obs;
 
   void addFavorite(int id) async {
@@ -90,7 +90,7 @@ class FavoritesController extends GetxController {
         }
 
         return conditions.every((filter) => filter(mvp));
-      }).map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+      }).map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))
     ]);
   }
 

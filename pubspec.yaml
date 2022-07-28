@@ -41,6 +41,7 @@ dependencies:
   url_launcher: ^6.1.5
   sliver_tools: ^0.2.7
   mask_text_input_formatter: ^2.3.0
+  flutter_countdown_timer: ^4.1.0
 
 dev_dependencies:
   flutter_test:

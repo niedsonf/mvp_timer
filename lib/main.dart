@@ -21,6 +21,7 @@ void main() {
   Get.put(TimerDialogController());
   Get.put(FavoritesController());
   favoritesController.startPrefs();
+  timerDialogController.startPrefs();
   runApp(const MvPTimer());
 }
 

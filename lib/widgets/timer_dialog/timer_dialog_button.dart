@@ -13,6 +13,8 @@ class TimerDialogButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      customBorder:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       radius: 10,
       onTap: onTap,
       child: Container(

@@ -16,7 +16,7 @@ import 'package:mvp_timer/widgets/timer_dialog/timer_dialog.dart';
 
 class MvPShowcase extends StatelessWidget {
   final MvP mvp;
-  final String tag;
+  final int tag;
   const MvPShowcase({Key? key, required this.mvp, required this.tag})
       : super(key: key);
 
@@ -40,10 +40,15 @@ class MvPShowcase extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Container(
+                child: AnimatedContainer(
+                    duration: const Duration(seconds: 1),
                     decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 1, color: light.withOpacity(.5)),
+                        border: Border.all(
+                            width: 1,
+                            color: !favoritesController.favoritesList.value
+                                    .contains(mvp.id.toString())
+                                ? light.withOpacity(.5)
+                                : red),
                         gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomCenter,
@@ -181,7 +186,7 @@ class MvPShowcase extends StatelessWidget {
                                 children: [
                                   const SizedBox(height: 30),
                                   const CustomText(
-                                    text: 'Resistências Elementais',
+                                    text: 'Fraquezas Elementais',
                                     size: 30,
                                   ),
                                   const SizedBox(height: 15),

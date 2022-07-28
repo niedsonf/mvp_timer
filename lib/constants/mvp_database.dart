@@ -245,6 +245,8 @@ SpawnMap thMap = SpawnMap(
 
 enum MvPGroup { TH, OW, IN }
 
+List<MvP> allMvPs = [...thMvPs, ...owMvPs, ...inMvPs];
+
 List<MvP> thMvPs = [
   MvP(
       id: 3241,

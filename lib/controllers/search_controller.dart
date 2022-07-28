@@ -16,11 +16,11 @@ class SearchController extends GetxController {
   RxBool inShow = true.obs;
   RxBool thShow = true.obs;
   RxList<MvPHero> owShowcase =
-      [...DB.owMvPs.map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))].obs;
+      [...DB.owMvPs.map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))].obs;
   RxList<MvPHero> inShowcase =
-      [...DB.inMvPs.map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))].obs;
+      [...DB.inMvPs.map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))].obs;
   RxList<MvPHero> thShowcase =
-      [...DB.thMvPs.map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))].obs;
+      [...DB.thMvPs.map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))].obs;
 
   getNewShowcase(RxList<MvPHero> obs, List<DB.MvP> list) {
     obs.value = RxList<MvPHero>([
@@ -40,7 +40,7 @@ class SearchController extends GetxController {
         }
 
         return conditions.every((filter) => filter(mvp));
-      }).map((mvp) => MvPHero(tag: mvp.name, mvp: mvp))
+      }).map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))
     ]);
   }
 

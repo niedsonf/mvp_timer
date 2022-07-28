@@ -3,12 +3,9 @@ import 'package:get/get.dart';
 import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
-import 'package:mvp_timer/widgets/custom_text.dart';
 import 'package:mvp_timer/widgets/grid_showcase.dart';
 import 'package:mvp_timer/widgets/group_title.dart';
-import 'package:mvp_timer/widgets/mvp_grid.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/mvps_sliver_appbar.dart';
-import 'package:sliver_tools/sliver_tools.dart';
 
 class OverviewPage extends StatelessWidget {
   const OverviewPage({Key? key}) : super(key: key);

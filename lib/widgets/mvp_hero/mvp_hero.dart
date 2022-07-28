@@ -10,7 +10,7 @@ import 'package:mvp_timer/widgets/mvp_showcase/mvp_showcase.dart';
 import 'package:mvp_timer/widgets/timer_dialog/timer_dialog.dart';
 
 class MvPHero extends StatelessWidget {
-  final String tag;
+  final int tag;
   final MvP mvp;
   const MvPHero({Key? key, required this.tag, required this.mvp})
       : super(key: key);
