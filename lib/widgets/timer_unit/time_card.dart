@@ -35,56 +35,53 @@ class _TimeCardState extends State<TimeCard> {
           )),
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Stack(
+                  alignment: AlignmentDirectional.bottomStart,
                   children: [
                     Image.network(
-                      'https://www.divine-pride.net/img/map/original/moc_fild17',
+                      spawnMap.mapUrl,
                       width: 200,
                       height: 200,
                     ),
-                    const MapPointer(positionX: 217 * 0.5, positionY: 276 * 0.5)
+                    MapPointer(
+                        positionX: int.parse(widget.timer.positionX!) * 0.4,
+                        positionY: int.parse(widget.timer.positionY!) * 0.4)
                   ],
                 ),
                 const SizedBox(width: 30),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 20),
-                      decoration: BoxDecoration(
-                          color: darkBlue,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: const <BoxShadow>[
-                            BoxShadow(
-                              offset: Offset(0, 4),
-                              blurRadius: 8,
-                              color: Colors.black26,
-                            )
-                          ]),
-                      child: Text.rich(TextSpan(children: [
-                        TextSpan(
-                            text: 'Posição X: ',
-                            style: TextStyle(color: light)),
-                        TextSpan(
-                            text: '${widget.timer.positionX}\n',
-                            style: TextStyle(color: light, fontSize: 20)),
-                        TextSpan(
-                            text: 'Posição Y: ',
-                            style: TextStyle(color: light)),
-                        TextSpan(
-                            text: '${widget.timer.positionY}',
-                            style: TextStyle(color: light, fontSize: 20)),
-                      ])),
-                    ),
+                    Text.rich(
+                        TextSpan(children: [
+                          TextSpan(
+                              text: 'Posição X: ',
+                              style: TextStyle(color: light)),
+                          TextSpan(
+                              text: '${widget.timer.positionX}\n',
+                              style: TextStyle(color: light, fontSize: 20)),
+                          TextSpan(
+                              text: 'Posição Y: ',
+                              style: TextStyle(color: light)),
+                          TextSpan(
+                              text: '${widget.timer.positionY}',
+                              style: TextStyle(color: light, fontSize: 20)),
+                        ]),
+                        textAlign: TextAlign.center),
                     const SizedBox(height: 25),
-                    CustomText(text: 'RESPAWN'),
+                    CustomText(
+                      text: 'RESPAWN',
+                      tAlign: TextAlign.center,
+                    ),
                     CountdownTimer(
                       textStyle: TextStyle(color: red, fontSize: 18),
                       endWidget: const CustomText(
-                          text: 'MvP vivo!', color: Colors.green),
+                          text: 'MvP vivo!',
+                          tAlign: TextAlign.center,
+                          color: Colors.green),
                       endTime: DateTime.parse(widget.timer.time!)
                           .millisecondsSinceEpoch,
                     ),

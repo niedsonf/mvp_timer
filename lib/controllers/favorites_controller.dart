@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvp_timer/constants/mvp_database.dart' as DB;
+import 'package:mvp_timer/helpers/constants.dart';
+import 'package:mvp_timer/routing/routes.dart';
 import 'package:mvp_timer/widgets/mvp_hero/mvp_hero.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,8 +17,8 @@ class FavoritesController extends GetxController {
   Rx<DB.Element?> selectedElement = DB.Elements.all.obs;
   Rx<DB.MvPSize?> selectedSize = DB.MvPSizes.all.obs;
   RxBool owShow = true.obs;
-  RxBool inShow = true.obs;
-  RxBool thShow = true.obs;
+  RxBool inShow = false.obs;
+  RxBool thShow = false.obs;
   RxList<String> favoritesList = [''].obs;
   RxList<MvPHero> owShowcase = [
     ...DB.owMvPs
@@ -38,6 +40,12 @@ class FavoritesController extends GetxController {
     await _prefs.then((instance) => {
           favoritesList.add(id.toString()),
           loadFavorites(),
+          Get.snackbar('MvP favoritado ;D',
+              'Que tal adicionarmos mais um a lista de caça?',
+              shouldIconPulse: true,
+              icon: Icon(Icons.favorite),
+              snackPosition: SnackPosition.BOTTOM,
+              duration: const Duration(seconds: 2))
         });
   }
 

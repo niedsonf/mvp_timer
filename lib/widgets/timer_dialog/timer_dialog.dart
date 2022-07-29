@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/helpers/mask.dart';
-import 'package:mvp_timer/modals/timer.dart';
+
 import 'package:mvp_timer/widgets/custom_text.dart';
 import 'package:mvp_timer/widgets/element_text.dart';
 import 'package:mvp_timer/widgets/timer_dialog/custom_text_input.dart';

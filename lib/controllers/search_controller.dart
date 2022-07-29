@@ -13,8 +13,8 @@ class SearchController extends GetxController {
   Rx<DB.Element?> selectedElement = DB.Elements.all.obs;
   Rx<DB.MvPSize?> selectedSize = DB.MvPSizes.all.obs;
   RxBool owShow = true.obs;
-  RxBool inShow = true.obs;
-  RxBool thShow = true.obs;
+  RxBool inShow = false.obs;
+  RxBool thShow = false.obs;
   RxList<MvPHero> owShowcase =
       [...DB.owMvPs.map((mvp) => MvPHero(tag: mvp.id, mvp: mvp))].obs;
   RxList<MvPHero> inShowcase =

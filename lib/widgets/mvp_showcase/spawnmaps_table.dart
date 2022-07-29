@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mvp_timer/constants/mvp_database.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/mask.dart';
+import 'package:mvp_timer/widgets/mvp_showcase/action_button_showcase.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SpawnmapsTable extends StatelessWidget {
   final MvP mvp;
@@ -14,7 +16,7 @@ class SpawnmapsTable extends StatelessWidget {
         0: FlexColumnWidth(2),
         1: FlexColumnWidth(2),
         2: FlexColumnWidth(2),
-        3: FlexColumnWidth(1),
+        3: FlexColumnWidth(2),
       },
       border: TableBorder.all(color: darker),
       children: [
@@ -22,13 +24,14 @@ class SpawnmapsTable extends StatelessWidget {
           Container(
               alignment: AlignmentDirectional.center,
               padding: const EdgeInsets.all(4),
-              child: Text('Mapa',
+              child: Text(
+                  mvp.spawnMaps.first.mapId != 'Instância' ? 'Mapa' : 'Link',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: darker, fontSize: 16))),
           Container(
               alignment: AlignmentDirectional.center,
               padding: const EdgeInsets.all(4),
-              child: Text('Mapa',
+              child: Text('Nome',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: darker, fontSize: 16))),
           Container(
@@ -49,13 +52,22 @@ class SpawnmapsTable extends StatelessWidget {
               Container(
                   alignment: AlignmentDirectional.center,
                   padding: const EdgeInsets.all(4),
-                  child: Image.network(
-                    e.mapUrl,
-                    width: 100,
-                    height: 100,
-                  )),
+                  child: mvp.spawnMaps.first.mapId != 'Instância'
+                      ? Image.network(
+                          e.mapUrl,
+                          width: 100,
+                          height: 100,
+                        )
+                      : ActionButtonShowcase(
+                          onTap: () {
+                            final Uri url =
+                                Uri.parse(mvp.spawnMaps.first.mapUrl);
+                            launchUrl(url);
+                          },
+                          color: blue,
+                          icon: Icons.search_off,
+                          text: 'bROWiki')),
               Container(
-                  alignment: AlignmentDirectional.center,
                   padding: const EdgeInsets.all(4),
                   child: Text(e.name,
                       textAlign: TextAlign.center,

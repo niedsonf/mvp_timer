@@ -109,15 +109,6 @@ class MvPShowcase extends StatelessWidget {
                                             onTap: () {
                                               favoritesController
                                                   .addFavorite(mvp.id);
-                                              Get.snackbar('MvP favoritado ;D',
-                                                  'Que tal adicionarmos mais um a lista de caça?',
-                                                  shouldIconPulse: true,
-                                                  icon: Icon(Icons.favorite),
-                                                  maxWidth: _size.width * 0.4,
-                                                  snackPosition:
-                                                      SnackPosition.TOP,
-                                                  duration: const Duration(
-                                                      seconds: 2));
                                             },
                                             color: red,
                                             icon: Icons.favorite,
@@ -148,14 +139,18 @@ class MvPShowcase extends StatelessWidget {
                                             text: 'Desfavoritar'),
                                       ),
                                       const SizedBox(height: 30),
-                                      ActionButtonShowcase(
-                                          onTap: () => showDialog(
-                                              context: context,
-                                              builder: (context) =>
-                                                  TimerDialog(mvp: mvp)),
-                                          color: blue,
-                                          icon: Icons.timer,
-                                          text: 'Timer'),
+                                      Visibility(
+                                        visible: mvp.spawnMaps.first.mapId !=
+                                            'Instância',
+                                        child: ActionButtonShowcase(
+                                            onTap: () => showDialog(
+                                                context: context,
+                                                builder: (context) =>
+                                                    TimerDialog(mvp: mvp)),
+                                            color: blue,
+                                            icon: Icons.timer,
+                                            text: 'Timer'),
+                                      ),
                                     ],
                                   ),
                                   Expanded(child: Container()),

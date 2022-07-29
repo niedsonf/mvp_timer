@@ -31,6 +31,7 @@ class TimerDialogButton extends StatelessWidget {
         ),
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [CustomText(text: text), Icon(Icons.add, color: light)],
         ),
       ),

@@ -4,6 +4,8 @@ import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/widgets/bubbles/bubble_effect.dart';
 import 'package:mvp_timer/widgets/custom_text.dart';
+import 'package:mvp_timer/widgets/sliver_appbar/donate_dialog.dart';
+
 import 'package:mvp_timer/widgets/sliver_appbar/search_options.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -59,7 +61,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text('MvPlus+', style: TextStyle(color: light, fontSize: 26)),
+          Text('MvPlus+ alpha', style: TextStyle(color: light, fontSize: 22)),
           SizedBox(
             width: 500,
             height: 50,
@@ -105,7 +107,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/BrowikiLogoBlue.png',
+                      'assets/lingua.gif',
                       fit: BoxFit.contain,
                       width: 50,
                     ),
@@ -125,7 +127,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/BrowikiLogoBlue.png',
+                      'assets/ok.gif',
                       fit: BoxFit.contain,
                       width: 50,
                     ),
@@ -140,17 +142,20 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
           SizedBox(
             width: _size.width * 0.07,
             child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                      context: context, builder: (context) => DonateDialog());
+                },
                 radius: 20,
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/BrowikiLogoBlue.png',
+                      'assets/heart.gif',
                       fit: BoxFit.contain,
                       width: 50,
                     ),
                     const CustomText(
-                      text: 'Doar ;D',
+                      text: 'Doar <3',
                       size: 10,
                       tAlign: TextAlign.center,
                     )

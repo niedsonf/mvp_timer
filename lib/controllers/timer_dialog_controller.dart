@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvp_timer/constants/mvp_database.dart';
+import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/modals/timer.dart';
+import 'package:mvp_timer/routing/routes.dart';
+import 'package:mvp_timer/widgets/timer_dialog/timer_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TimerDialogController extends GetxController {
@@ -46,21 +50,21 @@ class TimerDialogController extends GetxController {
   }
 
   setTimer() async {
-    print('${time.text} -----------------------\n\n\n\n\n\n');
     DateTime respawn = time.text == ''
         ? DateTime.now().add(Duration(minutes: selectedMap.value.respawn))
-        : DateTime.now().toLocal().add(Duration(
-            hours: int.parse(time.text.substring(0, 2)),
-            minutes:
-                selectedMap.value.respawn + int.parse(time.text.substring(3))));
-    print(respawn);
+        : DateTime(
+            DateTime.now().year,
+            DateTime.now().month,
+            DateTime.now().day,
+            int.parse(time.text.substring(0, 2)),
+            selectedMap.value.respawn + int.parse(time.text.substring(3)));
 
     String newTime = Timer(
             id: selectedMvp.value.id.toString(),
             spawnMap: selectedMap.value.mapId,
             respawn: selectedMap.value.respawn,
-            positionX: positionX.text,
-            positionY: positionY.text,
+            positionX: positionX.text == '' ? '0' : positionX.text,
+            positionY: positionY.text == '' ? '0' : positionY.text,
             time: respawn.toString())
         .toJson();
     _prefs.then((instance) {
@@ -68,6 +72,12 @@ class TimerDialogController extends GetxController {
       instance.setStringList(TIMER, [...times]);
       getTimerList();
       resetDialog();
+      Get.snackbar(
+          'Timer adicionado!', 'Clique aqui para ir para a página de Timers',
+          shouldIconPulse: true,
+          icon: Icon(Icons.timer),
+          snackPosition: SnackPosition.BOTTOM,
+          duration: const Duration(seconds: 2));
     });
   }
 

@@ -68,7 +68,7 @@ class MvPHero extends StatelessWidget {
                 .contains(mvp.id.toString()),
             child: Positioned(
                 right: 0,
-                bottom: 60,
+                bottom: 0,
                 child: HeroActionButton(
                     color: Colors.black,
                     onTap: () {
@@ -83,32 +83,29 @@ class MvPHero extends StatelessWidget {
                     },
                     icon: Icons.heart_broken)),
           ),
-          Positioned(
-              right: 0,
-              bottom: 0,
-              child: HeroActionButton(
-                  color: blue,
-                  onTap: () => showDialog(
-                      context: context,
-                      builder: (context) => TimerDialog(mvp: mvp)),
-                  icon: Icons.timer)),
+          Visibility(
+            visible: mvp.spawnMaps.first.mapId != 'Instância',
+            child: Positioned(
+                right: 0,
+                bottom: 60,
+                child: HeroActionButton(
+                    color: blue,
+                    onTap: () => showDialog(
+                        context: context,
+                        builder: (context) => TimerDialog(mvp: mvp)),
+                    icon: Icons.timer)),
+          ),
           Visibility(
             visible: !favoritesController.favoritesList.value
                 .contains(mvp.id.toString()),
             child: Positioned(
                 right: 0,
-                bottom: 60,
+                bottom: 0,
                 child: HeroActionButton(
                     color: red,
                     onTap: () {
                       favoritesController.addFavorite(mvp.id);
-                      Get.snackbar('MvP favoritado ;D',
-                          'Que tal adicionarmos mais um a lista de caça?',
-                          shouldIconPulse: true,
-                          icon: Icon(Icons.favorite),
-                          maxWidth: _size.width * 0.4,
-                          snackPosition: SnackPosition.BOTTOM,
-                          duration: const Duration(seconds: 2));
+                      
                     },
                     icon: Icons.favorite)),
           ),

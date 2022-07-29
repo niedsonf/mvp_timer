@@ -25,13 +25,15 @@ class DrawerMenuController extends GetxController {
   Widget returnIconFor(String pageName) {
     switch (pageName) {
       case OverviewPageDisplayName:
-        return _customIcon(Icons.view_agenda);
+        return _customIcon(Icons.list);
       case FavoritePageDisplayName:
         return _customIcon(Icons.favorite);
       case TimerPageDisplayName:
         return _customIcon(Icons.timer);
       case HelpPageDisplayName:
         return _customIcon(Icons.help);
+      case DonatePageDisplayName:
+        return _customIcon(Icons.monetization_on);
       default:
         return _customIcon(Icons.timer);
     }
