@@ -73,13 +73,6 @@ class MvPHero extends StatelessWidget {
                     color: Colors.black,
                     onTap: () {
                       favoritesController.removeFavorite(mvp.id);
-                      Get.snackbar('MvP removido dos favoritos D;',
-                          'Não termine sua coleção assim!',
-                          maxWidth: _size.width * 0.4,
-                          shouldIconPulse: true,
-                          icon: Icon(Icons.heart_broken),
-                          snackPosition: SnackPosition.BOTTOM,
-                          duration: const Duration(seconds: 2));
                     },
                     icon: Icons.heart_broken)),
           ),
@@ -105,7 +98,6 @@ class MvPHero extends StatelessWidget {
                     color: red,
                     onTap: () {
                       favoritesController.addFavorite(mvp.id);
-                      
                     },
                     icon: Icons.favorite)),
           ),

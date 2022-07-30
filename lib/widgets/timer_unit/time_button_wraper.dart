@@ -10,8 +10,13 @@ class TimeButtonWraper extends StatefulWidget {
   final String json;
   final Timer timer;
   final MvP mvp;
+  final GlobalKey cardTimeKey;
   const TimeButtonWraper(
-      {Key? key, required this.json, required this.mvp, required this.timer})
+      {Key? key,
+      required this.json,
+      required this.mvp,
+      required this.timer,
+      required this.cardTimeKey})
       : super(key: key);
 
   @override
@@ -55,6 +60,7 @@ class _TimeButtonWraperState extends State<TimeButtonWraper> {
                           .add(Duration(minutes: widget.timer.respawn))
                           .toString())
                       .toJson());
+              widget.cardTimeKey.currentState?.build(context);
             }),
       ],
     );

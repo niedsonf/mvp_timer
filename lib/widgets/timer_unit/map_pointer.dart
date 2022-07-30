@@ -4,7 +4,12 @@ import 'package:mvp_timer/constants/style.dart';
 class MapPointer extends StatefulWidget {
   final double positionX;
   final double positionY;
-  const MapPointer({Key? key, required this.positionX, required this.positionY})
+  bool isAlive;
+  MapPointer(
+      {Key? key,
+      required this.positionX,
+      required this.positionY,
+      required this.isAlive})
       : super(key: key);
 
   @override
@@ -46,6 +51,7 @@ class _MapPointerState extends State<MapPointer> with TickerProviderStateMixin {
         left: widget.positionX,
         bottom: widget.positionY,
         child: Stack(
+          clipBehavior: Clip.antiAlias,
           alignment: AlignmentDirectional.center,
           children: [
             ScaleTransition(
@@ -56,7 +62,8 @@ class _MapPointerState extends State<MapPointer> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.transparent,
-                      border: Border.all(color: blue)),
+                      border: Border.all(
+                          color: widget.isAlive ? Colors.green : red)),
                 )),
             ScaleTransition(
                 scale: scaleAnimation,
@@ -66,7 +73,7 @@ class _MapPointerState extends State<MapPointer> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                       boxShadow: [BoxShadow(color: light, blurRadius: 6)],
                       shape: BoxShape.circle,
-                      color: blue),
+                      color: widget.isAlive ? Colors.green : red),
                 )),
           ],
         ));

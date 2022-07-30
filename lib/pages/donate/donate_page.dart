@@ -14,7 +14,7 @@ class DonatePage extends StatelessWidget {
         SliverToBoxAdapter(
           child: CustomText(
               text:
-                  'Página em desenvolvimento, aqui será o mural dos donates!'),
+                  'Página em desenvolvimento, aqui será o mural dos donates! Haverá espaço permanente para os TOP 5 donates, além de um mural mensal para todos os donates.'),
         )
       ],
     );

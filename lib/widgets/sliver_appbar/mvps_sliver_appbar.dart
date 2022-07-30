@@ -4,6 +4,7 @@ import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/widgets/bubbles/bubble_effect.dart';
 import 'package:mvp_timer/widgets/custom_text.dart';
+import 'package:mvp_timer/widgets/patch_notes_modal/patch_notes_modal.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/donate_dialog.dart';
 
 import 'package:mvp_timer/widgets/sliver_appbar/search_options.dart';
@@ -122,7 +123,12 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
           SizedBox(
             width: _size.width * 0.07,
             child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) => PatchNotesModal());
+                },
                 radius: 20,
                 child: Column(
                   children: [

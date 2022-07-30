@@ -10,6 +10,8 @@ import 'package:mvp_timer/widgets/timer_unit/time_card_mvp.dart';
 
 class TimeCard extends StatefulWidget {
   Timer timer;
+  bool isAlive = false;
+  final timeCardKey = GlobalKey();
   TimeCard({Key? key, required this.timer}) : super(key: key);
 
   @override
@@ -32,13 +34,14 @@ class _TimeCardState extends State<TimeCard> {
           Expanded(
               child: TimeCardMvP(
             mvp: mvp,
+            isAlive: widget.isAlive,
           )),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Stack(
-                  alignment: AlignmentDirectional.bottomStart,
+                  alignment: AlignmentDirectional.center,
                   children: [
                     Image.network(
                       spawnMap.mapUrl,
@@ -46,8 +49,9 @@ class _TimeCardState extends State<TimeCard> {
                       height: 200,
                     ),
                     MapPointer(
-                        positionX: int.parse(widget.timer.positionX!) * 0.4,
-                        positionY: int.parse(widget.timer.positionY!) * 0.4)
+                        isAlive: widget.isAlive,
+                        positionX: int.parse(widget.timer.positionX!) * 0.38,
+                        positionY: int.parse(widget.timer.positionY!) * 0.38)
                   ],
                 ),
                 const SizedBox(width: 30),
@@ -77,13 +81,18 @@ class _TimeCardState extends State<TimeCard> {
                       tAlign: TextAlign.center,
                     ),
                     CountdownTimer(
+                      endTime: DateTime.parse(widget.timer.time!)
+                          .millisecondsSinceEpoch,
+                      onEnd: () {
+                        setState(() {
+                          widget.isAlive = true;
+                        });
+                      },
                       textStyle: TextStyle(color: red, fontSize: 18),
                       endWidget: const CustomText(
                           text: 'MvP vivo!',
                           tAlign: TextAlign.center,
                           color: Colors.green),
-                      endTime: DateTime.parse(widget.timer.time!)
-                          .millisecondsSinceEpoch,
                     ),
                   ],
                 ),
@@ -95,6 +104,7 @@ class _TimeCardState extends State<TimeCard> {
             json: widget.timer.toJson(),
             mvp: mvp,
             timer: widget.timer,
+            cardTimeKey: widget.timeCardKey,
           )),
           const SizedBox(width: 30)
         ],

@@ -122,17 +122,6 @@ class MvPShowcase extends StatelessWidget {
                                             onTap: () {
                                               favoritesController
                                                   .removeFavorite(mvp.id);
-                                              Get.snackbar(
-                                                  'MvP removido dos favoritos D;',
-                                                  'Não termine sua coleção assim!',
-                                                  maxWidth: _size.width * 0.4,
-                                                  shouldIconPulse: true,
-                                                  icon:
-                                                      Icon(Icons.heart_broken),
-                                                  snackPosition:
-                                                      SnackPosition.TOP,
-                                                  duration: const Duration(
-                                                      seconds: 2));
                                             },
                                             color: undeadColor,
                                             icon: Icons.heart_broken,

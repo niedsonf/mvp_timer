@@ -50,8 +50,15 @@ class FavoritesController extends GetxController {
   }
 
   void removeFavorite(int id) async {
-    await _prefs.then(
-        (instance) => {favoritesList.remove(id.toString()), loadFavorites()});
+    await _prefs.then((instance) => {
+          favoritesList.remove(id.toString()),
+          loadFavorites(),
+          Get.snackbar('MvP desfavoritado D:', 'Não termine sua coleção assim!',
+              shouldIconPulse: true,
+              icon: Icon(Icons.heart_broken),
+              snackPosition: SnackPosition.BOTTOM,
+              duration: const Duration(seconds: 2))
+        });
   }
 
   void loadFavorites() async {

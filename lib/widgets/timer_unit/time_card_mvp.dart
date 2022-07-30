@@ -8,8 +8,9 @@ import 'package:mvp_timer/widgets/mvp_showcase/mvp_showcase.dart';
 
 class TimeCardMvP extends StatefulWidget {
   final MvP mvp;
-
-  const TimeCardMvP({Key? key, required this.mvp}) : super(key: key);
+  bool isAlive;
+  TimeCardMvP({Key? key, required this.mvp, required this.isAlive})
+      : super(key: key);
 
   @override
   State<TimeCardMvP> createState() => _TimeCardMvPState();
@@ -34,7 +35,7 @@ class _TimeCardMvPState extends State<TimeCardMvP> {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   stops: [0.7, 0.7],
-                  colors: [darkBlue, light],
+                  colors: [darkBlue, widget.isAlive ? Colors.green : red],
                   begin: AlignmentDirectional.topCenter,
                   end: AlignmentDirectional.bottomStart)),
           child: Row(

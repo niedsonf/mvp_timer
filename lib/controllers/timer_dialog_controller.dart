@@ -72,8 +72,7 @@ class TimerDialogController extends GetxController {
       instance.setStringList(TIMER, [...times]);
       getTimerList();
       resetDialog();
-      Get.snackbar(
-          'Timer adicionado!', 'Clique aqui para ir para a página de Timers',
+      Get.snackbar('Timer adicionado!', 'Acompanhe na página de Timer',
           shouldIconPulse: true,
           icon: Icon(Icons.timer),
           snackPosition: SnackPosition.BOTTOM,
