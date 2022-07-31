@@ -14,7 +14,6 @@ class OverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return CustomScrollView(
-      physics: BouncingScrollPhysics(),
       slivers: [
         MvPsSliverAppbar(
           contentController: searchController,
@@ -27,7 +26,8 @@ class OverviewPage extends StatelessWidget {
         Obx(
           () => SliverVisibility(
               visible: searchController.owShow.value,
-              sliver: const GroupTitle(text: 'MvPs de Mapa Aberto')),
+              sliver: SliverToBoxAdapter(
+                  child: const GroupTitle(text: 'MvPs de Mapa Aberto'))),
         ),
         Obx(
           () => SliverVisibility(
@@ -51,7 +51,8 @@ class OverviewPage extends StatelessWidget {
         Obx(
           () => SliverVisibility(
               visible: searchController.inShow.value,
-              sliver: const GroupTitle(text: 'MvPs de Instância')),
+              sliver: SliverToBoxAdapter(
+                  child: const GroupTitle(text: 'MvPs de Instância'))),
         ),
         Obx(
           () => SliverVisibility(
@@ -75,7 +76,8 @@ class OverviewPage extends StatelessWidget {
         Obx(
           () => SliverVisibility(
               visible: searchController.thShow.value,
-              sliver: const GroupTitle(text: 'MvPs da Tumba da Honra')),
+              sliver: SliverToBoxAdapter(
+                  child: const GroupTitle(text: 'MvPs da Tumba da Honra'))),
         ),
         Obx(
           () => SliverVisibility(

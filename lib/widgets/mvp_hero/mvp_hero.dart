@@ -72,7 +72,7 @@ class MvPHero extends StatelessWidget {
                 child: HeroActionButton(
                     color: Colors.black,
                     onTap: () {
-                      favoritesController.removeFavorite(mvp.id);
+                      favoritesController.removeFavorite(mvp.id, _size.width);
                     },
                     icon: Icons.heart_broken)),
           ),
@@ -97,7 +97,7 @@ class MvPHero extends StatelessWidget {
                 child: HeroActionButton(
                     color: red,
                     onTap: () {
-                      favoritesController.addFavorite(mvp.id);
+                      favoritesController.addFavorite(mvp.id, _size.width);
                     },
                     icon: Icons.favorite)),
           ),

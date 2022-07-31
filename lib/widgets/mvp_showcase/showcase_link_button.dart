@@ -2,26 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/widgets/custom_text.dart';
 
-class TimeCardButton extends StatefulWidget {
-  final String text;
-  final IconData icon;
-  final Color? tColor;
-  final Color bColor;
+class ShowcaseLinkButton extends StatefulWidget {
   final Function() onTap;
-  const TimeCardButton(
+  final String text;
+  final Color color;
+  final IconData icon;
+  const ShowcaseLinkButton(
       {Key? key,
-      required this.text,
-      this.tColor,
-      required this.bColor,
       required this.onTap,
+      required this.text,
+      required this.color,
       required this.icon})
       : super(key: key);
 
   @override
-  State<TimeCardButton> createState() => _TimeCardButtonState();
+  State<ShowcaseLinkButton> createState() => _ShowcaseLinkButtonState();
 }
 
-class _TimeCardButtonState extends State<TimeCardButton>
+class _ShowcaseLinkButtonState extends State<ShowcaseLinkButton>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<double> scaleAnimation;
@@ -37,7 +35,6 @@ class _TimeCardButtonState extends State<TimeCardButton>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return ScaleTransition(
       scale: scaleAnimation,
       child: InkWell(
@@ -46,29 +43,17 @@ class _TimeCardButtonState extends State<TimeCardButton>
                 animationController.reverse().whenComplete(() => widget.onTap())
               });
         },
-        customBorder:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: Container(
-          width: size.width * 0.15,
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: widget.bColor,
-              boxShadow: const [
-                BoxShadow(
-                  offset: Offset(0, 4),
-                  blurRadius: 8,
-                  color: Colors.black26,
-                )
-              ]),
+              borderRadius: BorderRadius.circular(10), color: widget.color),
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomText(
-                text: widget.text,
-                tAlign: TextAlign.center,
-              ),
-              Icon(widget.icon, color: widget.tColor ?? light)
+              CustomText(text: widget.text, size: 14),
+              const SizedBox(width: 10),
+              Icon(widget.icon, size: 16, color: light)
             ],
           ),
         ),

@@ -17,3 +17,7 @@ Color holyColor = const Color(0xFFffffaa);
 Color darkColor = const Color(0xFFa55feb);
 Color ghostColor = const Color(0xFFaaaaaa);
 Color undeadColor = Colors.black;
+Color rubyColor = const Color(0xFF9b111e);
+Color sapphireColor = const Color(0xFF0F52BA);
+Color emeraldColor = const Color(0xFF50c878);
+Color goldColor = const Color(0xFFFFD700);

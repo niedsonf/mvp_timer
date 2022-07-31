@@ -5,6 +5,6 @@ import 'package:mvp_timer/routing/routes.dart';
 
 Navigator localNavigator() => Navigator(
       key: navigationController.navigationKey,
-      initialRoute: OverviewPageRoute,
+      initialRoute: drawerMenuController.activePage.value,
       onGenerateRoute: generateRoute,
     );

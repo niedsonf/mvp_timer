@@ -34,7 +34,7 @@ class MvPTimer extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: RootRoute,
         getPages: [GetPage(name: RootRoute, page: () => const AppLayout())],
-        title: 'MvP Timer',
+        title: 'MvPlus+',
         theme: ThemeData(
             scaffoldBackgroundColor: darker,
             textTheme: GoogleFonts.galindoTextTheme()));

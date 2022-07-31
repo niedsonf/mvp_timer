@@ -26,8 +26,8 @@ class _MenuDrawerItemState extends State<MenuDrawerItem> {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         onTap: () {
-          if (!drawerMenuController.isActive(widget.name)) {
-            drawerMenuController.activePage(widget.name);
+          if (!drawerMenuController.isActive(widget.route)) {
+            drawerMenuController.activePage(widget.route);
             navigationController.navigatoTo(widget.route);
           }
           navigationController.scaffoldKey.currentState?.closeDrawer();
@@ -39,14 +39,14 @@ class _MenuDrawerItemState extends State<MenuDrawerItem> {
         },
         child: Container(
           decoration: BoxDecoration(
-              border: drawerMenuController.isActive(widget.name)
+              border: drawerMenuController.isActive(widget.route)
                   ? Border.all(color: light, width: 1)
                   : null),
           child: Stack(alignment: AlignmentDirectional.center, children: [
             Column(
               children: [
                 Align(
-                  alignment: drawerMenuController.isActive(widget.name) ||
+                  alignment: drawerMenuController.isActive(widget.route) ||
                           drawerMenuController.isHovering(widget.name)
                       ? Alignment.centerLeft
                       : Alignment.centerRight,
@@ -55,14 +55,14 @@ class _MenuDrawerItemState extends State<MenuDrawerItem> {
                     curve: Curves.decelerate,
                     duration: const Duration(milliseconds: 500),
                     height: 30,
-                    width: drawerMenuController.isActive(widget.name) ||
+                    width: drawerMenuController.isActive(widget.route) ||
                             drawerMenuController.isHovering(widget.name)
                         ? _width / 3
                         : 0,
                   ),
                 ),
                 Align(
-                  alignment: drawerMenuController.isActive(widget.name) ||
+                  alignment: drawerMenuController.isActive(widget.route) ||
                           drawerMenuController.isHovering(widget.name)
                       ? Alignment.centerRight
                       : Alignment.centerLeft,
@@ -71,7 +71,7 @@ class _MenuDrawerItemState extends State<MenuDrawerItem> {
                     duration: const Duration(milliseconds: 500),
                     height: 30,
                     decoration: BoxDecoration(color: lightDark.withOpacity(.7)),
-                    width: drawerMenuController.isActive(widget.name) ||
+                    width: drawerMenuController.isActive(widget.route) ||
                             drawerMenuController.isHovering(widget.name)
                         ? _width / 3
                         : 0,

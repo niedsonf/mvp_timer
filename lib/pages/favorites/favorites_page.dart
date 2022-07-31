@@ -25,7 +25,8 @@ class FavoritesPage extends StatelessWidget {
         Obx(
           () => SliverVisibility(
               visible: favoritesController.owShow.value,
-              sliver: const GroupTitle(text: 'MvPs de Mapa Aberto')),
+              sliver: SliverToBoxAdapter(
+                  child: const GroupTitle(text: 'MvPs de Mapa Aberto'))),
         ),
         Obx(
           () => SliverVisibility(
@@ -49,7 +50,8 @@ class FavoritesPage extends StatelessWidget {
         Obx(
           () => SliverVisibility(
               visible: favoritesController.inShow.value,
-              sliver: const GroupTitle(text: 'MvPs de Instância')),
+              sliver: SliverToBoxAdapter(
+                  child: const GroupTitle(text: 'MvPs de Instância'))),
         ),
         Obx(
           () => SliverVisibility(
@@ -73,7 +75,8 @@ class FavoritesPage extends StatelessWidget {
         Obx(
           () => SliverVisibility(
               visible: favoritesController.thShow.value,
-              sliver: const GroupTitle(text: 'MvPs da Tumba da Honra')),
+              sliver: SliverToBoxAdapter(
+                  child: const GroupTitle(text: 'MvPs da Tumba da Honra'))),
         ),
         Obx(
           () => SliverVisibility(

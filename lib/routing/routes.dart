@@ -1,4 +1,4 @@
-const RootRoute = '/home';
+const RootRoute = '/';
 
 const OverviewPageDisplayName = "MvP's";
 const OverviewPageRoute = '/mvps';

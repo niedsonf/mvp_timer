@@ -30,6 +30,7 @@ class _TimerDialogState extends State<TimerDialog> {
 
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return AlertDialog(
       scrollable: true,
       contentPadding: const EdgeInsets.all(0),
@@ -104,7 +105,7 @@ class _TimerDialogState extends State<TimerDialog> {
           const SizedBox(height: 40),
           TimerDialogButton(
               onTap: () {
-                timerDialogController.setTimer();
+                timerDialogController.setTimer(_size.width);
                 Navigator.pop(context);
               },
               text: 'Adicionar',

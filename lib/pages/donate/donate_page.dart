@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_timer/helpers/constants.dart';
-import 'package:mvp_timer/widgets/custom_text.dart';
+import 'package:mvp_timer/widgets/bubbles/bubble_effect.dart';
+import 'package:mvp_timer/widgets/default_sliver_appbar/default_appbar.dart';
+import 'package:mvp_timer/widgets/donate_holder/mensal_donate_holder.dart';
+import 'package:mvp_timer/widgets/donate_holder/top_donate_holder.dart';
 import 'package:mvp_timer/widgets/group_title.dart';
-import 'package:mvp_timer/widgets/sliver_appbar/mvps_sliver_appbar.dart';
+import 'package:sliver_tools/sliver_tools.dart';
 
 class DonatePage extends StatelessWidget {
   const DonatePage({Key? key}) : super(key: key);
@@ -11,17 +13,22 @@ class DonatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        MvPsSliverAppbar(contentController: searchController),
-        SliverToBoxAdapter(child: SizedBox(height: 40)),
-        GroupTitle(text: 'Top Donates'),
-        SliverToBoxAdapter(child: SizedBox(height: 30)),
-        GroupTitle(text: 'Donates Mensais'),
-        SliverToBoxAdapter(child: SizedBox(height: 30)),
+        DefaultAppbar(),
         SliverToBoxAdapter(
-          child: CustomText(
-              text:
-                  'Página em desenvolvimento, aqui será o mural dos donates! Haverá espaço permanente para os TOP 5 donates, além de um mural mensal para todos os donates.'),
-        )
+          child: Column(
+            children: [
+              SizedBox(height: 50),
+              GroupTitle(text: 'Top Donates'),
+              SizedBox(height: 100),
+              TopDonateHolder(),
+              SizedBox(height: 100),
+              GroupTitle(text: 'Donates'),
+              SizedBox(height: 100),
+              MensalDonateHolder(),
+              SizedBox(height: 100),
+            ],
+          ),
+        ),
       ],
     );
   }

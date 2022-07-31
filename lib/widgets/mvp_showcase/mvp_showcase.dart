@@ -107,8 +107,8 @@ class MvPShowcase extends StatelessWidget {
                                             .contains(mvp.id.toString()),
                                         child: ActionButtonShowcase(
                                             onTap: () {
-                                              favoritesController
-                                                  .addFavorite(mvp.id);
+                                              favoritesController.addFavorite(
+                                                  mvp.id, _size.width);
                                             },
                                             color: red,
                                             icon: Icons.favorite,
@@ -121,7 +121,8 @@ class MvPShowcase extends StatelessWidget {
                                         child: ActionButtonShowcase(
                                             onTap: () {
                                               favoritesController
-                                                  .removeFavorite(mvp.id);
+                                                  .removeFavorite(
+                                                      mvp.id, _size.width);
                                             },
                                             color: undeadColor,
                                             icon: Icons.heart_broken,

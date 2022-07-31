@@ -6,24 +6,24 @@ import 'package:flutter/material.dart';
 class DrawerMenuController extends GetxController {
   static DrawerMenuController instance = Get.find();
 
-  RxString activePage = OverviewPageDisplayName.obs;
+  RxString activePage = OverviewPageRoute.obs;
   RxString onHover = ''.obs;
 
-  setActive(String pageName) {
-    activePage.value = pageName;
+  setActive(String pageRoute) {
+    activePage.value = pageRoute;
   }
 
-  setHover(String pageName) {
-    if (!isActive(pageName)) {
-      onHover.value = pageName;
+  setHover(String pageRoute) {
+    if (!isActive(pageRoute)) {
+      onHover.value = pageRoute;
     }
   }
 
-  bool isActive(String pageName) => pageName == activePage.value;
-  bool isHovering(String pageName) => pageName == onHover.value;
+  bool isActive(String pageRoute) => pageRoute == activePage.value;
+  bool isHovering(String pageRoute) => pageRoute == onHover.value;
 
-  Widget returnIconFor(String pageName) {
-    switch (pageName) {
+  Widget returnIconFor(String pageRoute) {
+    switch (pageRoute) {
       case OverviewPageDisplayName:
         return _customIcon(Icons.list);
       case FavoritePageDisplayName:

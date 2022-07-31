@@ -49,7 +49,7 @@ class TimerDialogController extends GetxController {
     });
   }
 
-  setTimer() async {
+  setTimer(double width) async {
     DateTime respawn = time.text == ''
         ? DateTime.now().add(Duration(minutes: selectedMap.value.respawn))
         : DateTime(
@@ -73,6 +73,7 @@ class TimerDialogController extends GetxController {
       getTimerList();
       resetDialog();
       Get.snackbar('Timer adicionado!', 'Acompanhe na página de Timer',
+          maxWidth: width * 0.5,
           shouldIconPulse: true,
           icon: Icon(Icons.timer),
           snackPosition: SnackPosition.BOTTOM,

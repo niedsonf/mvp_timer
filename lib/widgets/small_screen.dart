@@ -7,8 +7,9 @@ class SmallScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Small Screen',
-          style: TextStyle(fontSize: 20, color: lightDark)),
+      child: Text(
+          'Temporariamente indisponível para este tamanho de tela!\nJá estamos trabalho nisso :)',
+          style: TextStyle(fontSize: 20, color: light)),
     );
   }
 }
