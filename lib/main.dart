@@ -11,10 +11,10 @@ import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/layout.dart';
 import 'package:mvp_timer/routing/routes.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  setPathUrlStrategy();
   Get.put(SearchController());
   Get.put(NavigationController());
   Get.put(DrawerMenuController());

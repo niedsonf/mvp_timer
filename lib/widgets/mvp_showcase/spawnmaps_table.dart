@@ -43,7 +43,7 @@ class SpawnmapsTable extends StatelessWidget {
           Container(
               alignment: AlignmentDirectional.center,
               padding: const EdgeInsets.all(4),
-              child: Text('Respawn',
+              child: Text(mvp.spawnMaps.first.mapId != 'Instância' ? 'Respawn' : 'Cooldown',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: darker, fontSize: 16))),
         ]),

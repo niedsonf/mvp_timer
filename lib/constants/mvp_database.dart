@@ -648,7 +648,7 @@ List<MvP> inMvPs = [
         SpawnMap.instanceMap(
             name: 'Caverna do Polvo',
             mapUrl: 'https://browiki.org/wiki/Caverna_do_Polvo',
-            respawn: 3),
+            respawn: 180),
       ]),
   MvP(
       id: 1929,
@@ -675,7 +675,7 @@ List<MvP> inMvPs = [
         SpawnMap.instanceMap(
             name: 'Altar do Selo',
             mapUrl: 'https://browiki.org/wiki/Altar_do_Selo',
-            respawn: 12),
+            respawn: 720),
       ]),
   MvP(
       id: 1956,
@@ -729,7 +729,7 @@ List<MvP> inMvPs = [
         SpawnMap.instanceMap(
             name: 'Esgotos de Malangdo',
             mapUrl: 'https://browiki.org/wiki/Esgotos_de_Malangdo',
-            respawn: 1),
+            respawn: 60),
       ]),
   MvP(
       id: 2188,
@@ -756,7 +756,7 @@ List<MvP> inMvPs = [
         SpawnMap.instanceMap(
             name: 'Esgotos de Malangdo',
             mapUrl: 'https://browiki.org/wiki/Esgotos_de_Malangdo',
-            respawn: 1),
+            respawn: 60),
       ]),
   MvP(
       id: 3628,
@@ -972,7 +972,7 @@ List<MvP> inMvPs = [
         SpawnMap.instanceMap(
             name: 'Esgotos de Malangdo',
             mapUrl: 'https://browiki.org/wiki/Esgotos_de_Malangdo',
-            respawn: 1),
+            respawn: 60),
       ]),
   MvP(
       id: 2190,
@@ -999,7 +999,7 @@ List<MvP> inMvPs = [
         SpawnMap.instanceMap(
             name: 'Esgotos de Malangdo',
             mapUrl: 'https://browiki.org/wiki/Esgotos_de_Malangdo',
-            respawn: 1),
+            respawn: 60),
       ]),
   MvP(
       id: 3073,

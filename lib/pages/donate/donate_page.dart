@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_timer/helpers/constants.dart';
 import 'package:mvp_timer/widgets/custom_text.dart';
+import 'package:mvp_timer/widgets/group_title.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/mvps_sliver_appbar.dart';
 
 class DonatePage extends StatelessWidget {
@@ -11,6 +12,11 @@ class DonatePage extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         MvPsSliverAppbar(contentController: searchController),
+        SliverToBoxAdapter(child: SizedBox(height: 40)),
+        GroupTitle(text: 'Top Donates'),
+        SliverToBoxAdapter(child: SizedBox(height: 30)),
+        GroupTitle(text: 'Donates Mensais'),
+        SliverToBoxAdapter(child: SizedBox(height: 30)),
         SliverToBoxAdapter(
           child: CustomText(
               text:

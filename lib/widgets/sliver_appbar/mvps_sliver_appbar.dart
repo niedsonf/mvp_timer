@@ -125,9 +125,11 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
             child: InkWell(
                 onTap: () {
                   showModalBottomSheet(
+                      isScrollControlled: true,
                       context: context,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => PatchNotesModal());
+                      builder: (context) =>
+                          Wrap(children: [PatchNotesModal()]));
                 },
                 radius: 20,
                 child: Column(
