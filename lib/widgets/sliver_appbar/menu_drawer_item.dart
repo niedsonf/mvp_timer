@@ -57,7 +57,7 @@ class _MenuDrawerItemState extends State<MenuDrawerItem> {
                     height: 30,
                     width: drawerMenuController.isActive(widget.route) ||
                             drawerMenuController.isHovering(widget.name)
-                        ? _width / 3
+                        ? _width / 2
                         : 0,
                   ),
                 ),
@@ -73,7 +73,7 @@ class _MenuDrawerItemState extends State<MenuDrawerItem> {
                     decoration: BoxDecoration(color: lightDark.withOpacity(.7)),
                     width: drawerMenuController.isActive(widget.route) ||
                             drawerMenuController.isHovering(widget.name)
-                        ? _width / 3
+                        ? _width / 2
                         : 0,
                   ),
                 ),

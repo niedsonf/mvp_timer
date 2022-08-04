@@ -32,8 +32,6 @@ class DrawerMenuController extends GetxController {
         return _customIcon(Icons.timer);
       case HelpPageDisplayName:
         return _customIcon(Icons.help);
-      case DonatePageDisplayName:
-        return _customIcon(Icons.monetization_on);
       default:
         return _customIcon(Icons.timer);
     }

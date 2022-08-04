@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_timer/constants/style.dart';
+import 'package:mvp_timer/helpers/responsiveness.dart';
 import 'package:mvp_timer/routing/routes.dart';
 import 'package:mvp_timer/widgets/close_button.dart';
 
@@ -13,7 +14,8 @@ class MenuDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
     return Drawer(
-        width: _width / 3,
+        width:
+            ResponsiveWidget.isSmallScreen(context) ? _width / 2 : _width / 3,
         backgroundColor: darker,
         child: Padding(
           padding: const EdgeInsets.all(16),

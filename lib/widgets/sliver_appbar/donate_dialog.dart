@@ -25,10 +25,6 @@ class DonateDialog extends StatelessWidget {
             text: 'O botão vermelho irá te encaminhar para meu QRCODE/PIX\n',
             style: TextStyle(color: light, fontSize: 16)),
         TextSpan(
-            text:
-                'Na descrição do PIX informe com qual nome você gostaria de aparecer no mural de donates!\nDo contrário utilizarei seu nome real ;D\n\n',
-            style: TextStyle(color: light, fontSize: 16)),
-        TextSpan(
             text: 'Sugestões? Críticas? Dúvidas? Entre em contato!\n',
             style: TextStyle(color: blue, fontSize: 16)),
       ])),

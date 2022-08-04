@@ -27,7 +27,11 @@ class _MvPGridState extends State<MvPGrid> {
     return Obx(() {
       return theShowcase.length > 0
           ? SliverGrid.count(
-              crossAxisCount: ResponsiveWidget.isMediumScreen(context) ? 3 : 5,
+              crossAxisCount: ResponsiveWidget.isLargeScreen(context)
+                  ? 5
+                  : ResponsiveWidget.isMediumScreen(context)
+                      ? 3
+                      : 2,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               children: [...theShowcase])

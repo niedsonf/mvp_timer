@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_timer/pages/donate/donate_page.dart';
+
 import 'package:mvp_timer/pages/favorites/favorites_page.dart';
 import 'package:mvp_timer/pages/help/help_page.dart';
 import 'package:mvp_timer/pages/overview/overview_page.dart';
@@ -16,8 +16,6 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(TimerPage());
     case HelpPageRoute:
       return _getPageRoute(HelpPage());
-    case DonatePageRoute:
-      return _getPageRoute(DonatePage());
     default:
       return _getPageRoute(OverviewPage());
   }

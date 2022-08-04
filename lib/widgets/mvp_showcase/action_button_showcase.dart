@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_timer/constants/style.dart';
+import 'package:mvp_timer/helpers/responsiveness.dart';
 import 'package:mvp_timer/widgets/custom_text.dart';
 
 class ActionButtonShowcase extends StatelessWidget {
@@ -24,7 +25,8 @@ class ActionButtonShowcase extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Container(
-        width: width * 0.1,
+        width:
+            ResponsiveWidget.isSmallScreen(context) ? width * 0.3 : width * 0.1,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),

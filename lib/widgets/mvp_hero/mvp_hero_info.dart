@@ -16,19 +16,22 @@ class MvPHeroInfo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('LV. ${mvp.level.toString()} ',
-                style:
-                    TextStyle(color: light, fontSize: 14, letterSpacing: 1.3)),
-            Visibility(
-                visible: mvp.greenAura,
-                child: ElementText(
-                    text: 'Aura Verde',
-                    bgColor: Colors.green,
-                    textColor: light))
-          ],
+        Visibility(
+          visible: !ResponsiveWidget.isSmallScreen(context),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('LV. ${mvp.level.toString()} ',
+                  style: TextStyle(
+                      color: light, fontSize: 14, letterSpacing: 1.3)),
+              Visibility(
+                  visible: mvp.greenAura,
+                  child: ElementText(
+                      text: 'Aura Verde',
+                      bgColor: Colors.green,
+                      textColor: light))
+            ],
+          ),
         ),
         RichText(
             textAlign: TextAlign.center,
@@ -52,21 +55,30 @@ class MvPHeroInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                mvp.element.widget,
-                const SizedBox(height: 10),
-                mvp.race.widget,
-                const SizedBox(height: 10),
-                mvp.size.widget,
-              ],
+            Visibility(
+              visible: !ResponsiveWidget.isSmallScreen(context),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  mvp.element.widget,
+                  const SizedBox(height: 10),
+                  mvp.race.widget,
+                  const SizedBox(height: 10),
+                  mvp.size.widget,
+                ],
+              ),
             ),
             Expanded(child: Container()),
             Image.network(
               mvp.gifUrl,
-              height: ResponsiveWidget.isLargeScreen(context) ? 80 : 140,
-              width: ResponsiveWidget.isLargeScreen(context) ? 80 : 140,
+              height: ResponsiveWidget.isSmallScreen(context) ||
+                      ResponsiveWidget.isLargeScreen(context)
+                  ? 80
+                  : 140,
+              width: ResponsiveWidget.isSmallScreen(context) ||
+                      ResponsiveWidget.isLargeScreen(context)
+                  ? 80
+                  : 140,
             ),
             Expanded(child: Container()),
           ],

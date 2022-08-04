@@ -47,12 +47,13 @@ class _ShowcaseLinkButtonState extends State<ShowcaseLinkButton>
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: widget.color),
-          child: Row(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomText(text: widget.text, size: 14),
-              const SizedBox(width: 10),
+              const SizedBox(height: 5),
               Icon(widget.icon, size: 16, color: light)
             ],
           ),

@@ -24,11 +24,12 @@ class ResponsiveWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: ((context, constraints) {
       double _width = MediaQuery.of(context).size.width;
-      if (_width >= mediumScreenSize) {
+      /*if (_width >= mediumScreenSize) {
         return largeScreen;
       } else {
         return smallScreen;
-      }
+      }*/
+      return largeScreen;
     }));
   }
 }

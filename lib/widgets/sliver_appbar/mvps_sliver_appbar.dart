@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mvp_timer/constants/style.dart';
 import 'package:mvp_timer/helpers/constants.dart';
+import 'package:mvp_timer/helpers/responsiveness.dart';
 import 'package:mvp_timer/widgets/bubbles/bubble_effect.dart';
 import 'package:mvp_timer/widgets/custom_text.dart';
-import 'package:mvp_timer/widgets/patch_notes_modal/patch_notes_modal.dart';
 import 'package:mvp_timer/widgets/sliver_appbar/donate_dialog.dart';
 
 import 'package:mvp_timer/widgets/sliver_appbar/search_options.dart';
@@ -23,7 +23,6 @@ class MvPsSliverAppbar extends StatefulWidget {
 
 class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
   @override
-  FocusNode searchBarFocus = FocusNode();
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     return SliverAppBar(
@@ -36,19 +35,14 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
       backgroundColor: darkBlue,
       automaticallyImplyLeading: false,
       toolbarHeight: 70,
-      expandedHeight: 160,
-      leading: Row(
-        children: [
-          const SizedBox(width: 5),
-          IconButton(
-              iconSize: 35,
-              splashRadius: 25,
-              onPressed: () {
-                navigationController.scaffoldKey.currentState!.openDrawer();
-              },
-              icon: Icon(Icons.menu_open, color: light)),
-        ],
-      ),
+      expandedHeight: ResponsiveWidget.isSmallScreen(context) ? 240 : 160,
+      leading: IconButton(
+          iconSize: 35,
+          splashRadius: 25,
+          onPressed: () {
+            navigationController.scaffoldKey.currentState!.openDrawer();
+          },
+          icon: Icon(Icons.menu_open, color: light)),
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.none,
         background: Stack(
@@ -62,13 +56,15 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text('MvPlus+ alpha', style: TextStyle(color: light, fontSize: 22)),
+          Visibility(
+            visible: !ResponsiveWidget.isSmallScreen(context),
+            child:
+                Text('MvPlus+', style: TextStyle(color: light, fontSize: 22)),
+          ),
           SizedBox(
-            width: 500,
+            width: ResponsiveWidget.isSmallScreen(context) ? 220 : 400,
             height: 50,
             child: TextField(
-//              onTap: () => Focus.of(context).requestFocus(searchBarFocus),
-              focusNode: searchBarFocus,
               cursorColor: light,
               style: TextStyle(fontSize: 18, color: light),
               controller: widget.contentController.searchTextController,
@@ -92,14 +88,11 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
                     borderSide: BorderSide(color: light, width: 1),
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                   ),
-                  suffixIcon: Icon(
-                      searchBarFocus.hasFocus ? Icons.close : Icons.search,
-                      color: light,
-                      size: 20)),
+                  suffixIcon: Icon(Icons.search, color: light, size: 20)),
             ),
           ),
           SizedBox(
-            width: _size.width * 0.07,
+            width: _size.width * 0.1,
             child: InkWell(
                 radius: 20,
                 onTap: () {
@@ -113,7 +106,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
                       width: 50,
                     ),
                     const CustomText(
-                      text: 'Ir para bROWiki',
+                      text: 'bROWiki',
                       size: 10,
                       tAlign: TextAlign.center,
                     )
@@ -121,34 +114,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
                 )),
           ),
           SizedBox(
-            width: _size.width * 0.07,
-            child: InkWell(
-                onTap: () {
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context,
-                      backgroundColor: Colors.transparent,
-                      builder: (context) =>
-                          Wrap(children: [PatchNotesModal()]));
-                },
-                radius: 20,
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/ok.gif',
-                      fit: BoxFit.contain,
-                      width: 50,
-                    ),
-                    const CustomText(
-                      text: 'Patch Notes',
-                      size: 10,
-                      tAlign: TextAlign.center,
-                    )
-                  ],
-                )),
-          ),
-          SizedBox(
-            width: _size.width * 0.07,
+            width: _size.width * 0.1,
             child: InkWell(
                 onTap: () {
                   showDialog(
@@ -163,7 +129,7 @@ class _MvPsSliverAppbarState extends State<MvPsSliverAppbar> {
                       width: 50,
                     ),
                     const CustomText(
-                      text: 'Doar <3',
+                      text: 'Doar',
                       size: 10,
                       tAlign: TextAlign.center,
                     )
